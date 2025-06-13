@@ -1,0 +1,261 @@
+.kalendar-page {
+    background: var(--home-page-gradient);
+    margin: 0 auto;
+    max-width: 1700px;
+}
+
+.marg {
+    margin-bottom: 12px;
+}
+
+.calendar-background {
+    top: 10vh;
+    height: 300vh;
+}
+
+.kalendar-page .kalendar-hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+
+    margin-bottom: 20px;
+}
+
+.kalendar-page .kalendar-hero .kalendar-content {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.kalendar-page .kalendar-hero .kalendar-hero-image {
+    width: 30%;
+    mix-blend-mode: lighten;
+}
+
+.kalendar-page .kalendar-card-container {
+    width: 100%;
+    padding: 20px 40px;
+    margin: 40px 0;
+}
+
+.kalendar-page .kalendar-card-container .kalendar-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+}
+
+.kalendar-page .kalendar-card-container .kalendar-card-wrapper .card {
+    width: 300px;
+    height: 440px;
+    background-color: #2E1940;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+}
+
+.kalendar-page .kalendar-card-container .kalendar-card-wrapper .card h3 {
+    font-size: 26px;
+    color: var(--button-color);
+    margin-bottom: 12px;
+}
+
+.kalendar-page .kalendar-card-container .kalendar-card-wrapper .card p {
+    color: white;
+}
+
+.kalendar-page .kalendar-card-container .kalendar-card-wrapper .card img {
+    width: 60%;
+    height: auto;
+    mix-blend-mode: lighten;
+}
+
+.kalendar-page .kalendar-card-container .kalendar-card-wrapper .card:nth-child(1) {
+    box-shadow: 0 0 20px #5DFFFF;
+}
+
+.kalendar-page .kalendar-card-container .kalendar-card-wrapper .card:nth-child(2) {
+    box-shadow: 0 0 20px var(--button-color);
+}
+
+.kalendar-page .kalendar-card-container .kalendar-card-wrapper .card:nth-child(3) {
+    box-shadow: 0 0 20px #FFDD33;
+}
+
+.kalendar-radionice-container {
+    width: 100%;
+    padding: 20px 40px;
+    margin: 40px 0;
+}
+
+.kalendar-radionice-container h2,
+.kalendar-radionice-container .subhead {
+    text-align: center;
+    color: white;
+}
+
+.kalendar-radionice-container .date-filter-container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.kalendar-radionice-container .date-filter-container .date-filter-wrapper {
+    display: flex;
+    gap: 50px;
+    border: 1px solid var(--button-color);
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+}
+
+.kalendar-radionice-container .date-filter-container .date-filter-wrapper span {
+    cursor: pointer;
+}
+
+.kalendar-radionice-container .date-filter-container .date-filter-wrapper .active {
+    color: var(--button-color);
+    text-decoration: underline;
+}
+
+.testimonials {
+    text-align: center;
+    color: white;
+}
+
+.testimonials .testimonials-card-container {
+    width: 100%;
+    padding: 20px 40px;
+    margin: 40px 0;
+}
+
+.testimonials .testimonials-card-container .testimonials-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 50px;
+
+}
+
+.testimonials .testimonials-card-container .testimonials-card-wrapper .testimonial-card {
+    max-width: 28rem;
+    min-height: 180px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid var(--button-color);
+    box-shadow: 0px 0px 14px var(--button-color);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+}
+
+.testimonials .testimonials-card-container .testimonials-card-wrapper .testimonial-card .stars {
+    margin-bottom: 12px;
+}
+
+.testimonials .testimonials-card-container .testimonials-card-wrapper .testimonial-card .stars>* {
+    color: #FFDD33;
+
+}
+
+.testimonials .testimonials-card-container .testimonials-card-wrapper .testimonial-card h3 {
+    font-family: "inherit", sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.testimonials .testimonials-card-container .testimonials-card-wrapper .testimonial-card span {
+    margin-top: auto;
+    font-family: "Luckiest Guy", sans-serif;
+    color: #5DFFFF;
+    text-shadow: 0px 0px 3px #5DFFFF;
+
+}
+
+.kalendar-carousel {
+    width: 100%;
+    padding: 20px 40px;
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.kalendar-carousel p {
+    color: white;
+}
+
+.kalendar-carousel .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+    .kalendar-page .kalendar-hero {
+        gap: 0;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+
+
+    .kalendar-page .kalendar-hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .kalendar-page .kalendar-hero .kalendar-content {
+        text-align: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+
+    .kalendar-page .kalendar-hero .kalendar-hero-image {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .kalendar-radionice-container .date-filter-container .date-filter-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .calendar-background {
+        display: none;
+        position: absolute;
+    }
+}
+
+@media (max-width: 480px) {
+    .kalendar-page .kalendar-hero .kalendar-hero-image {
+        width: 70%;
+    }
+
+    .kalendar-page .kalendar-card-container,
+    .kalendar-radionice-container,
+    .testimonials .testimonials-card-container,
+    .testimonials .testimonials-card-container {
+        padding: 10px;
+    }
+}

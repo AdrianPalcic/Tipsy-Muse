@@ -11,7 +11,7 @@ const Navbar = () => {
     <header className="bg-tetriary-dark px-2 sm:px-6 py-2 fixed top-0 w-full z-50 border-b-2 border-primary border-solid ">
       <nav className="flex justify-between items-center font-luckiest-guy text-primary">
         {/* Logo */}
-        <div id="logo" className="w-[100px] h-[100px]">
+        <div id="logo" className="w-[70px] h-[70px] sm:w-[100px] sm:h-[100px]">
           <img src="Logo.png" alt="Tipsy Muse Logo" className="w-full h-full" />
         </div>
 

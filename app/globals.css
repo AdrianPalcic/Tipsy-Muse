@@ -5,6 +5,7 @@
   --color-tetriary: #26024c;
   --color-tetriary-dark: #1d003b;
   --color-fourth: #fff600;
+  --color-fifth: #00ba95;
 
   --font-luckiest-guy: "Luckiest Guy", cursive;
   --font-baloo: "Baloo 2", sans-serif;
@@ -85,6 +86,12 @@
   }
   .shadow-blue {
     box-shadow: 6px 6px 0 var(--color-primary);
+  }
+  .shadow-yellow {
+    box-shadow: 6px 6px 0 var(--color-fourth);
+  }
+  .shadow-green {
+    box-shadow: 6px 6px 0 var(--color-fifth);
   }
   .shadow-blue-text {
     text-shadow: 3px 3px 0px var(--color-primary);
@@ -178,4 +185,3 @@
     transform: translateX(calc(-100% / 3));
   }
 }
-

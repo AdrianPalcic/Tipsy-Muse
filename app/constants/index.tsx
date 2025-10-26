@@ -1,3 +1,5 @@
+import { Mail, MapPin, Phone } from "lucide-react";
+
 export const links = [
   {
     text: "O nama",
@@ -99,4 +101,22 @@ export const screenshots = [
   "/screenshot_0050s.jpg",
   "/screenshot_0052s.jpg",
   "/screenshot_0054s.jpg",
+];
+
+export const info = [
+  {
+    icon: <MapPin color="#00ba95" size={40} />,
+    label: "Adresa",
+    value: "Maksimirska 141A",
+  },
+  {
+    icon: <Phone color="#00ba95" size={40} />,
+    label: "Telefon",
+    value: "+385 XX XXX XXXX",
+  },
+  {
+    icon: <Mail color="#00ba95" size={40} />,
+    label: "Email",
+    value: "tipsymusezagreb@gmail.com",
+  },
 ];

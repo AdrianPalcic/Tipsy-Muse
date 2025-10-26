@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const CTA = () => {
@@ -11,7 +12,9 @@ const CTA = () => {
           Pridružite se našim radionicama i stvorite vlastite nezaboravne
           trenutke
         </p>
-        <button className="button yellow">Pogledajte naše radionice</button>
+        <button className="button yellow">
+          <Link href="/radionice">Pogledajte naše radionice</Link>
+        </button>
       </div>
     </section>
   );

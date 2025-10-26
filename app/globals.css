@@ -44,7 +44,7 @@
     background: linear-gradient(to top, var(--color-tetriary), #95007e);
   }
   .section-padding {
-    @apply pb-44 px-4 sm:px-16;
+    @apply pb-44 px-4 sm:px-4;
   }
   .button {
     border: 3px solid black;
@@ -124,4 +124,57 @@
     -webkit-background-clip: text;
     color: transparent;
   } */
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  animation: scroll-left 8s linear infinite;
+  will-change: transform;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 200px;
+  height: 300px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Responsive carousel items */
+@media (min-width: 640px) {
+  .carousel-track {
+    gap: 1.5rem;
+    animation: scroll-left 8s linear infinite;
+  }
+  .carousel-item {
+    width: 280px;
+    height: 380px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-track {
+    gap: 2rem;
+    animation: scroll-left 8s linear infinite;
+  }
+  .carousel-item {
+    width: 350px;
+    height: 450px;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
 }

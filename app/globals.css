@@ -1,1 +1,71 @@
 @import "tailwindcss";
+@theme {
+  --color-primary: #37d0ec;
+  --color-secondary: #fa40b4;
+  --color-tetriary: #26024c;
+  --color-tetriary-dark: #1d003b;
+  --color-fourth: #fff600;
+
+  --font-luckiest-guy: "Luckiest Guy", cursive;
+  --font-baloo: "Baloo 2", sans-serif;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-luckiest-guy);
+  }
+  body {
+    font-family: var(--font-baloo);
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .title {
+    @apply text-7xl mb-2;
+  }
+  .section-overlay-a {
+    background: linear-gradient(to bottom, var(--color-tetriary), #95007e);
+  }
+
+  .section-overlay-b {
+    background: linear-gradient(to top, var(--color-tetriary), #95007e);
+  }
+  .button {
+    border: 3px solid black;
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    font-family: var(--font-luckiest-guy);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .button:hover {
+    transform: translateY(4px); /* moves the button down */
+    transform: translateX(4px); /* moves the button right */
+    box-shadow: 1px 1px 0;
+  }
+  .blue {
+    background-color: var(--color-primary);
+    box-shadow: 4px 4px 0 var(--color-secondary);
+  }
+  .red {
+    background-color: var(--color-secondary);
+    box-shadow: 4px 4px 0 var(--color-primary);
+  }
+  .yellow {
+    background-color: var(--color-fourth);
+    box-shadow: 4px 4px 0 var(--color-primary);
+  }
+}
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(0deg, #2be9eb, #6d66ef);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}

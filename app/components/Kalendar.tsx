@@ -3,6 +3,7 @@
 import React, { ReactEventHandler, useEffect, useState } from "react";
 import { months } from "../constants";
 import { formattedDate } from "../utils";
+import Link from "next/link";
 
 const Kalendar = () => {
   const [days, setDays] = useState<Date[]>([]);
@@ -36,15 +37,15 @@ const Kalendar = () => {
 
   return (
     <section className="section-overlay-a section-padding">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="flex-1 w-full text-center lg:text-left">
-            <h1 className="title text-gradient">Kalendar</h1>
+            <h1 className="title text-gradient shadow-pink-text">Kalendar</h1>
             <p className="subtitle mx-auto lg:mx-0">
               Malo vina, puno ideja. Tipsy Muse spaja kreativnost, razgovor i
               umjetnost — jer najbolje misli ne dolaze za stolom, nego između
-              gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj svoje
-              mjesto za dozu umjetnosti uz čašu vina.
+              gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj
+              svoje mjesto za dozu umjetnosti uz čašu vina.
             </p>
             <div className="calendar w-full">
               <div className="p-3 sm:p-4 lg:p-6 border-3 border-solid border-primary w-full rounded-md bg-tetriary-dark shadow-pink">
@@ -82,11 +83,18 @@ const Kalendar = () => {
                 </div>
               </div>
             </div>
+            <p className="subtitle mt-6">
+              U slučaju da imate nekakva pitanja vezana uz naše datume,
+              radionice ili općenito želite o nečemu popričati.
+            </p>
+            <button className="button red">
+              <Link href={"/kontakt"}>Kontaktiraj Nas</Link>
+            </button>
           </div>
           <div className="hidden lg:flex justify-center flex-1">
-            <img 
-              src="/wine-bottles.png" 
-              alt="Wine Bottles" 
+            <img
+              src="/wine-bottles.png"
+              alt="Wine Bottles"
               className="max-w-full h-auto"
             />
           </div>

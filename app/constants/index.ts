@@ -52,3 +52,24 @@ export const months = [
   "Studeni",
   "Prosinac",
 ];
+
+export const howWeWork = [
+  {
+    id: 1,
+    text: "Odaberi",
+    description:
+      "Ova sekcija jednostavno prikazuje cijeli proces — od odabira radionice do sudjelovanja.",
+  },
+  {
+    id: 2,
+    text: "Rezerviraj",
+    description:
+      "Ova sekcija jednostavno prikazuje cijeli proces — od odabira radionice do sudjelovanja.",
+  },
+  {
+    id: 3,
+    text: "Dođi!",
+    description:
+      "Ova sekcija jednostavno prikazuje cijeli proces — od odabira radionice do sudjelovanja.",
+  },
+];

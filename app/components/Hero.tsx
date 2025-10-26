@@ -9,7 +9,7 @@ const Hero = () => {
     >
       <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 max-w-7xl mx-auto">
         <div className="flex-1 w-full text-center lg:text-left">
-          <h1 className="title text-gradient">
+          <h1 className="title text-gradient shadow-pink-text">
             OPUSTI SE, <br />
             STVARAJ I UŽIVAJ
           </h1>

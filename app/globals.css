@@ -15,6 +15,7 @@
   h2,
   h3 {
     font-family: var(--font-luckiest-guy);
+    color: var(--color-primary);
   }
   body {
     font-family: var(--font-baloo);
@@ -33,7 +34,7 @@
     @apply text-secondary text-2xl sm:text-3xl;
   }
   .card {
-    @apply px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 bg-tetriary-dark border-3 border-black rounded-md duration-200 transition-all hover:translate-y-1.5 hover:translate-x-1.5 cursor-pointer hover:shadow-[0px_0px_0px_rgba(0,0,0,0)];
+    @apply px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 bg-tetriary-dark border-3 border-black rounded-md duration-200 transition-all hover:translate-y-1.5 hover:translate-x-1.5 cursor-pointer hover:shadow-[1px_1px_0px_rgba(0,0,0,0)];
   }
   .section-overlay-a {
     background: linear-gradient(to bottom, var(--color-tetriary), #95007e);
@@ -82,6 +83,15 @@
   .shadow-pink {
     box-shadow: 6px 6px 0 var(--color-secondary);
   }
+  .shadow-blue {
+    box-shadow: 6px 6px 0 var(--color-primary);
+  }
+  .shadow-blue-text {
+    text-shadow: 3px 3px 0px var(--color-primary);
+  }
+  .shadow-pink-text {
+    text-shadow: 6px 6px 0px var(--color-secondary);
+  }
 
   .nav-link {
     position: relative;
@@ -109,9 +119,9 @@
 }
 
 @layer utilities {
-  .text-gradient {
+  /* .text-gradient {
     background: linear-gradient(0deg, #2be9eb, #6d66ef);
     -webkit-background-clip: text;
     color: transparent;
-  }
+  } */
 }

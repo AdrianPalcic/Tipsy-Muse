@@ -7,22 +7,24 @@ const KategorijeRadionica = () => {
       id="kategorije-radionica"
       className="section-overlay-b section-padding"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="   mx-auto">
         <div className="flex flex-col lg:flex-row-reverse items-center w-full gap-8 lg:gap-12 mb-12">
           <div className="flex-1 w-full text-center lg:text-left">
-            <h1 className="title text-gradient">Tipsy Radionice</h1>
+            <h1 className="title text-gradient shadow-pink-text">
+              Tipsy Radionice
+            </h1>
             <p className="subtitle mx-auto lg:mx-0">
               Malo vina, puno ideja. Tipsy Muse spaja kreativnost, razgovor i
               umjetnost — jer najbolje misli ne dolaze za stolom, nego između
-              gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj svoje
-              mjesto za dozu umjetnosti uz čašu vina.
+              gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj
+              svoje mjesto za dozu umjetnosti uz čašu vina.
             </p>
             <button className="button blue w-full sm:w-auto">
               Pogledaj radionice
             </button>
           </div>
           <div className="flex justify-center flex-1 w-full relative">
-            <div className="w-full max-w-3xl h-[300px] sm:h-[400px] lg:h-[500px]">
+            <div className=" h-[300px] sm:h-[400px] lg:h-[500px]">
               <img
                 src="/women.png"
                 alt="Dvije dame na wine & art zabavi"
@@ -31,12 +33,12 @@ const KategorijeRadionica = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {kategorije.map((category) => (
             <div
               key={category.name}
-              className="card shadow-pink flex flex-col items-center"
+              className="card shadow-pink flex flex-col items-center rounded-md"
             >
               <div className="w-full max-w-[220px] mx-auto">
                 <img

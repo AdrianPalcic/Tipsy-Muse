@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="px-2 sm:px-6 py-2 fixed top-0 w-full z-50 border-b-4 border-primary border-solid ">
+    <header className="bg-tetriary-dark px-2 sm:px-6 py-2 fixed top-0 w-full z-50 border-b-2 border-primary border-solid ">
       <nav className="flex justify-between items-center font-luckiest-guy text-primary">
         {/* Logo */}
         <div id="logo" className="w-[100px] h-[100px]">

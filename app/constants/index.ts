@@ -16,3 +16,39 @@ export const links = [
     slug: "kontakt",
   },
 ];
+
+export const kategorije = [
+  {
+    name: "Wine & Paint",
+    description:
+      "Na ovim opuštenim radionicama spajamo umjetnost i zabavu! Uz čašu vina i smijeh u dobrom društvu, vodimo vas korak po korak kroz proces slikanja dok stvarate vlastito umjetničko djelo — bez ikakvog prethodnog iskustva.",
+    img: "/glass.png",
+  },
+  {
+    name: "Sip & Sparkle",
+    description:
+      "Na ovim opuštenim radionicama spajamo umjetnost i zabavu! Uz čašu vina i smijeh u dobrom društvu, vodimo vas korak po korak kroz proces slikanja dok stvarate vlastito umjetničko djelo — bez ikakvog prethodnog iskustva.",
+    img: "/note.png",
+  },
+  {
+    name: "Cocktails & Paint",
+    description:
+      "Na ovim opuštenim radionicama spajamo umjetnost i zabavu! Uz čašu vina i smijeh u dobrom društvu, vodimo vas korak po korak kroz proces slikanja dok stvarate vlastito umjetničko djelo — bez ikakvog prethodnog iskustva.",
+    img: "/paint.png",
+  },
+];
+
+export const months = [
+  "Siječanj",
+  "Veljača",
+  "Ožujak",
+  "Travanj",
+  "Svibanj",
+  "Lipanj",
+  "Srpanj",
+  "Kolovoz",
+  "Rujan",
+  "Listopad",
+  "Studeni",
+  "Prosinac",
+];

@@ -120,3 +120,49 @@ export const info = [
     value: "tipsymusezagreb@gmail.com",
   },
 ];
+
+export const stats = [
+  {
+    number: "5+",
+    text: "Godina Iskustva",
+  },
+  {
+    number: "1000+",
+    text: "Zadovoljnih Umjetnika",
+  },
+  {
+    number: "200+",
+    text: "Održanih Radionica",
+  },
+  {
+    number: "15+",
+    text: "Različitih Tehnika",
+  },
+];
+
+export const radioniceStats = [
+  {
+    img: "/paint.png",
+    title: "Kreativnost Nema Pravila",
+    description:
+      "Nema pritiska ni ocjenjivanja — sve je u zabavi i izražavanju.",
+  },
+  {
+    img: "/glass.png",
+    title: "Vino uključeno, naravno",
+    description:
+      "Svaka radionica dolazi uz čašu (ili dvije) vina, jer inspiracija bolje teče uz Merlot.",
+  },
+  {
+    img: "/panel.png",
+    title: "Atmosfera koja opušta",
+    description:
+      "Glazba i dobra energija — stvorili smo ambijent koji potiče kreativnost.",
+  },
+  {
+    img: "/tata.png",
+    title: "Za svakoga, bez iznimke",
+    description:
+      "Nikada nisi slikao? Savršeno. Naši voditelji su tu da te provedu kroz svaku fazu uz osmijeh.",
+  },
+];

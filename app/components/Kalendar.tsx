@@ -96,6 +96,7 @@ const Kalendar = () => {
               src="/wine-bottles.png"
               alt="Wine Bottles"
               className="max-w-full h-auto"
+              loading="lazy"
             />
           </div>
         </div>

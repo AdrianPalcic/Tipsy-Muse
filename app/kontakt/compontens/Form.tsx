@@ -1,3 +1,5 @@
+"use client";
+
 import { info } from "@/app/constants";
 import Link from "next/link";
 import React from "react";

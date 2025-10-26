@@ -93,6 +93,7 @@ const GalerijaPage = () => {
                   <img
                     src={image}
                     alt={`Gallery ${index + 1}`}
+                    loading="lazy"
                     className={`
                        w-full h-full object-cover
                        transition-transform duration-500

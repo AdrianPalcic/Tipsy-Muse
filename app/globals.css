@@ -34,6 +34,7 @@
   .heading-three {
     @apply text-secondary text-2xl sm:text-3xl;
   }
+
   .card {
     @apply px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 bg-tetriary-dark border-3 border-black rounded-md duration-200 transition-all hover:translate-y-1.5 hover:translate-x-1.5 cursor-pointer hover:shadow-[1px_1px_0px_rgba(0,0,0,0)];
   }
@@ -122,6 +123,16 @@
 
   .nav-link:hover::after {
     width: 100%;
+  }
+  .line::after {
+    content: "";
+    position: absolute;
+    bottom: -8px; /* koliko udaljena ispod teksta */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* duljina linije, možeš promijeniti po želji */
+    height: 4px;
+    background-color: var(--color-primary);
   }
 }
 

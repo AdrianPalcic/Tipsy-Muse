@@ -45,6 +45,7 @@ const KategorijeRadionica = () => {
                   src={category.img}
                   alt={`Tipsy Muse | ${category.name}  `}
                   className="mix-blend-lighten w-full h-auto object-cover"
+                  loading="lazy"
                 />
               </div>
               <h3 className="heading-three mb-4">{category.name}</h3>

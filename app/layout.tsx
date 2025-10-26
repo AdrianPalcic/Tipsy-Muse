@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Tipsy Muse | Wine & Paint",
@@ -59,7 +61,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${luckiestGuy.variable} ${baloo.variable}`}>
       <body suppressHydrationWarning className={`antialiased`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

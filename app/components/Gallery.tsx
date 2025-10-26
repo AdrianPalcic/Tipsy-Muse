@@ -1,34 +1,8 @@
 import Link from "next/link";
 import React from "react";
+import { screenshots } from "../constants";
 
 const Gallery = () => {
-  const screenshots = [
-    "/screenshot_0006s.jpg",
-    "/screenshot_0008s.jpg",
-    "/screenshot_0010s.jpg",
-    "/screenshot_0012s.jpg",
-    "/screenshot_0014s.jpg",
-    "/screenshot_0016s.jpg",
-    "/screenshot_0018s.jpg",
-    "/screenshot_0020s.jpg",
-    "/screenshot_0022s.jpg",
-    "/screenshot_0026s.jpg",
-    "/screenshot_0028s.jpg",
-    "/screenshot_0030s.jpg",
-    "/screenshot_0032s.jpg",
-    "/screenshot_0034s.jpg",
-    "/screenshot_0036s.jpg",
-    "/screenshot_0038s.jpg",
-    "/screenshot_0040s.jpg",
-    "/screenshot_0042s.jpg",
-    "/screenshot_0044s.jpg",
-    "/screenshot_0046s.jpg",
-    "/screenshot_0048s.jpg",
-    "/screenshot_0050s.jpg",
-    "/screenshot_0052s.jpg",
-    "/screenshot_0054s.jpg",
-  ];
-
   return (
     <section className="section-overlay-a section-padding">
       <div className="flex flex-col items-center">
@@ -46,8 +20,7 @@ const Gallery = () => {
         <div className="mt-12 sm:mt-16 lg:mt-20 w-full overflow-hidden">
           <div className="carousel-container">
             <div className="carousel-track">
-              {/* Render images 3 times for seamless infinite scroll */}
-              {[...Array(3)].map((_, setIndex) =>
+              {[...Array(13)].map((_, setIndex) =>
                 screenshots.map((img, index) => (
                   <div
                     key={`img-set${setIndex}-${index}`}

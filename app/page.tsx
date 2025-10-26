@@ -10,14 +10,12 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <main>
-      <Navbar />
       <Hero />
       <KategorijeRadionica />
       <Kalendar />
       <HowWeWork />
       <Gallery />
       <CTA />
-      <Footer />
     </main>
   );
 }

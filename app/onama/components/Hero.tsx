@@ -16,16 +16,14 @@ const Hero = () => {
             dobru energiju. Kod nas se ne ocjenjuje — nego slavi svaki potez
             kistom i svaki osmijeh uz gutljaj vina.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <div className="flex flex-row items-center justify-center lg:justify-start gap-4">
             <Link href="/radionice" className="w-fit">
               <button className="button blue w-full sm:w-auto">
                 Radionice
               </button>
             </Link>
             <Link href="/galerija" className="w-fit">
-              <button className="button red w-full sm:w-auto">
-                Galerija
-              </button>
+              <button className="button red w-full sm:w-auto">Galerija</button>
             </Link>
           </div>
         </div>

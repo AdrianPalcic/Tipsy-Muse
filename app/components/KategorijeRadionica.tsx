@@ -20,7 +20,7 @@ const KategorijeRadionica = () => {
               gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj
               svoje mjesto za dozu umjetnosti uz čašu vina.
             </p>
-            <div className="w-fit">
+            <div className="w-fit mx-auto sm:mx-0">
               <Link href="/radionice" className="w-fit">
                 <button className="button blue w-full sm:w-auto">
                   Pogledaj radionice

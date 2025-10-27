@@ -19,7 +19,7 @@ const Hero = () => {
             gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj svoje
             mjesto za dozu umjetnosti uz čašu vina.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <div className="flex flex-row items-center justify-center lg:justify-start gap-4">
             <Link href={"/radionice"} className="w-fit">
               <button className="button blue w-full sm:w-auto">
                 Naše Radionice

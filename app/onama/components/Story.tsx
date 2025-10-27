@@ -16,7 +16,7 @@ const Story = () => {
             ne moraš biti umjetnik da bi stvarao; dovoljno je da dođeš otvorenog
             uma i prazne čaše.
           </p>
-          <div className="w-fit">
+          <div className="w-fit mx-auto sm:mx-0">
             <Link href="/radionice" className="w-fit">
               <button className="button blue w-full sm:w-auto">
                 Dođi se zabaviti kod nas!

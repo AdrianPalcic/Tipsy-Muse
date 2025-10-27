@@ -65,7 +65,7 @@ const Footer = () => {
               {links.map((link) => (
                 <li key={link.slug}>
                   <Link
-                    href={`/${link.slug}`}
+                    href={link.slug}
                     className="text-white hover:text-primary transition-colors"
                   >
                     {link.text}

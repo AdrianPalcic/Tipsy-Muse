@@ -3,19 +3,19 @@ import { Mail, MapPin, Phone } from "lucide-react";
 export const links = [
   {
     text: "O nama",
-    slug: "onama",
+    slug: "/onama",
   },
   {
     text: "Radionice",
-    slug: "radionice",
+    slug: "/radionice",
   },
   {
     text: "Galerija",
-    slug: "galerija",
+    slug: "/galerija",
   },
   {
     text: "Kontaktiraj nas",
-    slug: "kontakt",
+    slug: "/kontakt",
   },
 ];
 
@@ -183,6 +183,7 @@ export const radionice = [
     doing: ["Ovo", "Ono", "To", "Tamo"],
     ukljuceno: ["Vino", "Boje", "Kist", "Zabava"],
     image: "/screenshot_0006s.jpg",
+    lokacija: " Maksimirska 141A",
   },
   {
     id: 2,
@@ -199,6 +200,7 @@ export const radionice = [
     doing: ["Slikanje", "Upoznavanje", "Smijeh", "Mjehurići"],
     ukljuceno: ["Prosecco", "Platno", "Boje", "Kistovi"],
     image: "/screenshot_0008s.jpg",
+    lokacija: " Maksimirska 141A",
   },
   {
     id: 3,
@@ -215,6 +217,7 @@ export const radionice = [
     doing: ["Miješanje koktela", "Slikanje", "Zabava", "Opustanje"],
     ukljuceno: ["Kokteli", "Boje", "Platno", "Instruktor"],
     image: "/screenshot_0010s.jpg",
+    lokacija: " Maksimirska 141A",
   },
   {
     id: 4,
@@ -231,6 +234,7 @@ export const radionice = [
     doing: ["Slikanje", "Opustanje", "Druženje", "Učenje tehnike"],
     ukljuceno: ["Čaša vina", "Platno", "Boje", "Instruktor"],
     image: "/screenshot_0012s.jpg",
+    lokacija: " Maksimirska 141A",
   },
   {
     id: 5,
@@ -247,6 +251,7 @@ export const radionice = [
     doing: ["Miješanje koktela", "Slikanje", "Smijeh", "Druženje"],
     ukljuceno: ["Kokteli", "Boje", "Platno", "Dobra atmosfera"],
     image: "/screenshot_0014s.jpg",
+    lokacija: " Maksimirska 141A",
   },
 ];
 

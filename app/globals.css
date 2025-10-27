@@ -50,6 +50,9 @@
   .section-overlay-a {
     background: linear-gradient(to bottom, var(--color-tetriary), #95007e);
   }
+  .tag {
+    @apply font-luckiest-guy p-1 bg-fourth border-2 border-black;
+  }
 
   .section-overlay-b {
     background: linear-gradient(to top, var(--color-tetriary), #95007e);

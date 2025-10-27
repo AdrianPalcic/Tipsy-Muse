@@ -12,4 +12,5 @@ interface Radionice {
   ukljuceno: string[];
   image: string;
   slug: string;
+  lokacija: string;
 }

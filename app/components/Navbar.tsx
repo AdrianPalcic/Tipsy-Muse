@@ -16,7 +16,7 @@ const Navbar = () => {
           id="logo"
           className="w-[70px] h-[70px] sm:w-[100px] sm:h-[100px]"
         >
-          <img src="Logo.png" alt="Tipsy Muse Logo" className="w-full h-full" />
+          <img src="/Logo.png" alt="Tipsy Muse Logo" className="w-full h-full" />
         </Link>
 
         {/* Desktop Links */}

@@ -30,9 +30,7 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
                   alt={title}
                   className="w-full h-full object-cover rounded-tl-md rounded-tr-md"
                 />
-                <span className="absolute top-6 right-6 font-luckiest-guy p-1 bg-fourth border-2 border-black">
-                  {kategorija}
-                </span>
+                <span className="absolute top-6 right-6 tag">{kategorija}</span>
               </div>
               <div id="content" className="px-4 pb-4">
                 <h3 className="heading-three ">{title}</h3>

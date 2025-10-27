@@ -1,7 +1,11 @@
-import React from "react";
+import Body from "./components/Body";
 
-const page = () => {
-  return <div>page</div>;
-};
+export default async function RadionicaPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
-export default page;
+  return <Body slug={slug} />;
+}

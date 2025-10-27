@@ -1,7 +1,30 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { screenshots } from "../constants";
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const heroImages = screenshots.slice(0, 6);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        setCurrentImageIndex(
+          (prevIndex) => (prevIndex + 1) % heroImages.length
+        );
+        setIsTransitioning(false);
+      }, 500);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
   return (
     <section
       id="hero"
@@ -32,11 +55,13 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-        <div className="w-full lg:flex-1 h-[300px] sm:h-[400px] lg:h-[600px]">
+        <div className="w-full lg:flex-1 h-[300px] sm:h-[400px] lg:h-[600px] relative overflow-hidden">
           <img
-            src="/radionica.card.jpeg"
+            src={heroImages[currentImageIndex]}
             alt="Wine & art zabava"
-            className="w-full h-full object-cover shadow-pink"
+            className={`w-full h-full object-cover transition-opacity duration-1000 ${
+              isTransitioning ? "opacity-0" : "opacity-100"
+            }`}
           />
         </div>
       </div>

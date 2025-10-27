@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section className="section-overlay-a section-padding pt-50 border-b-3 border-primary w-full">
-      <div className="flex justify-center items-center gap-12 h-[10vh] sm:h-[50vh]">
+      <div className="flex justify-center items-center gap-12 ">
         <div className="flex-1 h-full hidden lg:block">
           <img
             className="w-full h-full object-cover"

@@ -166,3 +166,76 @@ export const radioniceStats = [
       "Nikada nisi slikao? Savršeno. Naši voditelji su tu da te provedu kroz svaku fazu uz osmijeh.",
   },
 ];
+
+export const radionice = [
+  {
+    id: 1,
+    kategorija: "Wine & Sparkle",
+    title: "Wine & Sparkle",
+    description:
+      "Explore wines from different regions and learn brush techniques.",
+    date: "27.10.2025",
+    time: "18:00",
+    kapacitet: "20",
+    rezervirano: "12",
+    cijena: "45",
+    doing: ["Ovo", "Ono", "To", "Tamo"],
+    ukljuceno: ["Vino", "Boje", "Kist", "Zabava"],
+  },
+  {
+    id: 2,
+    kategorija: "Sip & Sparkle",
+    title: "Sip & Sparkle",
+    description:
+      "A fun evening of painting and sipping prosecco — let your creativity shine as you create your own sparkling masterpiece.",
+    date: "10.11.2025",
+    time: "19:00",
+    kapacitet: "25",
+    rezervirano: "18",
+    cijena: "40",
+    doing: ["Slikanje", "Upoznavanje", "Smijeh", "Mjehurići"],
+    ukljuceno: ["Prosecco", "Platno", "Boje", "Kistovi"],
+  },
+  {
+    id: 3,
+    kategorija: "Cocktails & Paint",
+    title: "Cocktails & Paint",
+    description:
+      "Sip your favorite cocktail while painting vibrant art — perfect for groups and special occasions.",
+    date: "24.11.2025",
+    time: "20:00",
+    kapacitet: "30",
+    rezervirano: "22",
+    cijena: "50",
+    doing: ["Miješanje koktela", "Slikanje", "Zabava", "Opustanje"],
+    ukljuceno: ["Kokteli", "Boje", "Platno", "Instruktor"],
+  },
+  {
+    id: 4,
+    kategorija: "Wine & Sparkle",
+    title: "Vino i Zvjezdani Sjaj",
+    description:
+      "Opusti se uz čašu vina dok oslikavaš noćno nebo — večer kreativnosti i mira.",
+    date: "02.12.2025",
+    time: "18:30",
+    kapacitet: "20",
+    rezervirano: "10",
+    cijena: "45",
+    doing: ["Slikanje", "Opustanje", "Druženje", "Učenje tehnike"],
+    ukljuceno: ["Čaša vina", "Platno", "Boje", "Instruktor"],
+  },
+  {
+    id: 5,
+    kategorija: "Cocktails & Paint",
+    title: "Tropical Art Night",
+    description:
+      "Stir, sip, and paint tropical vibes — a night full of colors, laughter, and cocktails!",
+    date: "15.12.2025",
+    time: "19:30",
+    kapacitet: "28",
+    rezervirano: "16",
+    cijena: "55",
+    doing: ["Miješanje koktela", "Slikanje", "Smijeh", "Druženje"],
+    ukljuceno: ["Kokteli", "Boje", "Platno", "Dobra atmosfera"],
+  },
+];

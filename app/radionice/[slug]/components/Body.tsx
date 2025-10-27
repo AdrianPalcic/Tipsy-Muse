@@ -37,7 +37,7 @@ const Body = ({ slug }: { slug: string }) => {
         description={radionica.description}
         kategorija={radionica.kategorija}
       />
-      <section className="section-overlay-a section-padding pt-20 px-2 sm:px-12 border-t-3 border-secondary">
+      <section className="section-overlay-a section-padding pt-20 px-2 sm:px-12 border-t-3 border-b-3 border-secondary pb-15">
         <div className="flex gap-6 lg:flex-row flex-col ">
           <div className="flex-[1.5]">
             <div className="radionica-stats shadow-pink grid grid-cols-1 sm:grid-cols-2 gap-y-6 ">
@@ -159,6 +159,57 @@ const Body = ({ slug }: { slug: string }) => {
                 </div>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="section-overlay-b section-padding pt-10">
+        <h1 className="title shadow-pink-text text-center">
+          Opče informacije o radionicama
+        </h1>
+        <div className="mx-auto max-w-6xl grid grid-cols-1 sm:grid-cols-2 gap-6 mb-4">
+          <div className="card shadow-pink py-5">
+            <h3 className="heading-three">Politika Otkazivanja</h3>
+            <p className="subtitle mb-0">
+              Besplatno otkazivanje do 48 sati prije početka radionice.
+              Otkazivanje unutar 48 sati rezultira naplatom 50% cijene.
+              Neopravdani izostanak naplaćuje se u punom iznosu.
+            </p>
+          </div>
+          <div className="card shadow-pink py-5">
+            <h3 className="heading-three">Politika Otkazivanja</h3>
+            <p className="subtitle mb-0">
+              Besplatno otkazivanje do 48 sati prije početka radionice.
+              Otkazivanje unutar 48 sati rezultira naplatom 50% cijene.
+              Neopravdani izostanak naplaćuje se u punom iznosu.
+            </p>
+          </div>
+          <div className="card shadow-pink py-5">
+            <h3 className="heading-three">Politika Otkazivanja</h3>
+            <p className="subtitle mb-0">
+              Besplatno otkazivanje do 48 sati prije početka radionice.
+              Otkazivanje unutar 48 sati rezultira naplatom 50% cijene.
+              Neopravdani izostanak naplaćuje se u punom iznosu.
+            </p>
+          </div>
+          <div className="card shadow-pink py-5">
+            <h3 className="heading-three">Politika Otkazivanja</h3>
+            <p className="subtitle mb-0">
+              Besplatno otkazivanje do 48 sati prije početka radionice.
+              Otkazivanje unutar 48 sati rezultira naplatom 50% cijene.
+              Neopravdani izostanak naplaćuje se u punom iznosu.
+            </p>
+          </div>
+        </div>
+        <div className="card shadow-pink max-w-6xl mx-auto mt-10">
+          <h1 className="title text-center shadow-pink-text">Imate Pitanja?</h1>
+          <p className="subtitle text-center">
+            Naš tim je tu da vam pomogne! Kontaktirajte nas za sve dodatne
+            informacije.
+          </p>
+          <div className="w-fit mx-auto">
+            <Link href="/kontakt" className=" w-fit">
+              <button className="button red w-fit">Kontaktirajte nas</button>
+            </Link>
           </div>
         </div>
       </section>

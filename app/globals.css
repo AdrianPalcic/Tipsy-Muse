@@ -47,6 +47,9 @@
   .radionica {
     @apply flex flex-col bg-tetriary-dark rounded-md border-3 border-black duration-200 transition-all hover:translate-y-1.5 hover:translate-x-1.5 hover:shadow-[1px_1px_0px_#fa40b4];
   }
+  .radionica-stats {
+    @apply bg-tetriary px-4 sm:px-10 py-6 mb-6 border-3 border-black;
+  }
   .section-overlay-a {
     background: linear-gradient(to bottom, var(--color-tetriary), #95007e);
   }

@@ -39,7 +39,7 @@ const Body = ({ slug }: { slug: string }) => {
       />
       <section className="section-overlay-a section-padding pt-20 px-2 sm:px-12 border-t-3 border-secondary">
         <div className="flex gap-6 lg:flex-row flex-col ">
-          <div className="flex-1">
+          <div className="flex-[1.5]">
             <div className="radionica-stats shadow-pink grid grid-cols-1 sm:grid-cols-2 gap-y-6 ">
               <div className="flex gap-4">
                 <Calendar className="text-primary" />

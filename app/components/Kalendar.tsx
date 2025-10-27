@@ -1,13 +1,17 @@
 "use client";
 
 import React, { ReactEventHandler, useEffect, useState } from "react";
-import { months } from "../constants";
+import { months, radionice } from "../constants";
 import { formattedDate } from "../utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Kalendar = () => {
   const [days, setDays] = useState<Date[]>([]);
   const [selectedDay, setSelectedDay] = useState("");
+  const [activeDays, setActiveDays] = useState<string[]>([]);
+  const [workshops, setWorkshops] = useState<Radionice[]>([]);
+  const router = useRouter();
   const today = new Date();
 
   const currentYear = today.getFullYear();
@@ -15,6 +19,8 @@ const Kalendar = () => {
   const currentDate = today.getDate();
 
   useEffect(() => {
+    setWorkshops(radionice);
+
     const getDaysInMonth = (year: number, month: number) => {
       const date = new Date(year, month, 1);
       const days = [];
@@ -27,12 +33,19 @@ const Kalendar = () => {
 
     const monthDays = getDaysInMonth(currentYear, currentMonth);
     setDays(monthDays);
+
+    const radionicesDates = radionice.map((radionica) => radionica.date);
+    setActiveDays(radionicesDates);
   }, [currentYear, currentMonth]);
 
   const handleClick = (day: Date) => {
     const date = formattedDate(day);
     setSelectedDay(date);
-    console.log(date);
+    const activeRadionica = workshops.find(
+      (radionica) => radionica.date === selectedDay
+    );
+    if (!activeRadionica) return;
+    router.push(`/radionice/${activeRadionica.slug}`);
   };
 
   return (
@@ -62,13 +75,17 @@ const Kalendar = () => {
                         day.getMonth() === currentMonth &&
                         day.getDate() < currentDate);
 
+                    const hasRadionica = activeDays.includes(
+                      formattedDate(day)
+                    );
+
                     return (
                       <div
                         key={day.toISOString()}
                         onClick={() => !isPastDate && handleClick(day)}
                         className={`
-                          aspect-square flex items-center justify-center 
-                          text-xs sm:text-base lg:text-lg font-semibold transition-colors rounded-md lg:rounded-lg text-white duration-200
+                          aspect-square flex flex-col items-center justify-center  
+                          text-xs sm:text-base lg:text-lg font-semibold transition-colors rounded-md lg:rounded-lg text-white duration-200 relative
                           ${
                             isPastDate
                               ? "opacity-50 cursor-not-allowed"
@@ -77,6 +94,9 @@ const Kalendar = () => {
                         `}
                       >
                         {day.getDate()}
+                        {hasRadionica && !isPastDate && (
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-pink-500 rounded-full absolute bottom-1 sm:bottom-2" />
+                        )}
                       </div>
                     );
                   })}

@@ -4,6 +4,7 @@ import { radionice } from "@/app/constants";
 import { useEffect, useState } from "react";
 import Hero from "./Hero";
 import { Calendar, CheckCircle, MapPin, User } from "lucide-react";
+import Link from "next/link";
 
 const Body = ({ slug }: { slug: string }) => {
   const [radionica, setRadionica] = useState<Radionice | null>(null);
@@ -130,6 +131,33 @@ const Body = ({ slug }: { slug: string }) => {
               <span className="text-white/70 mb-4">Cijena</span>
               <h2 className="text-6xl">€{radionica.cijena}</h2>
               <span className="text-white/70 my-4">Po osobi</span>
+              <Link href="/" className="w-full">
+                <button className="button red w-full">Prijavi se sada</button>
+              </Link>
+              <div className="bg-red-900/60 border-3 border-red-600 w-full py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">
+                {" "}
+                Samo još {freeSpace} mjesta
+              </div>
+
+              <div className="border-t-2 border-b-2 border-secondary/70 py-4 w-full mb-4">
+                <div className="flex justify-between text-secondary mb-4">
+                  <p className="font-luckiest-guy">Trajanje</p>
+                  <span className="text-[16px]">{radionica.trajanje}h</span>
+                </div>
+                <div className="flex justify-between text-secondary mb-4">
+                  <p className="font-luckiest-guy">Kapacitet</p>
+                  <span className="text-[16px]">{radionica.kapacitet}</span>
+                </div>
+                <div className="flex justify-between text-secondary">
+                  <p className="font-luckiest-guy">Lokacija</p>
+                  <span className="text-[16px]">{radionica.lokacija}h</span>
+                </div>
+              </div>
+              <Link href="/radionice" className="w-full">
+                <div className="w-full py-3 px-6 border border-secondary flex items-center justify-center font-luckiest-guy text-secondary duration-200 transition-colors hover:bg-secondary/30">
+                  Natrag na radionice
+                </div>
+              </Link>
             </div>
           </div>
         </div>

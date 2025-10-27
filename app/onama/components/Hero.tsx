@@ -17,12 +17,16 @@ const Hero = () => {
             kistom i svaki osmijeh uz gutljaj vina.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <button className="button blue w-full sm:w-auto">
-              <Link href="/radionice">Radionice</Link>
-            </button>
-            <button className="button red w-full sm:w-auto">
-              <Link href="/galerija">Galerija</Link>
-            </button>
+            <Link href="/radionice" className="w-fit">
+              <button className="button blue w-full sm:w-auto">
+                Radionice
+              </button>
+            </Link>
+            <Link href="/galerija" className="w-fit">
+              <button className="button red w-full sm:w-auto">
+                Galerija
+              </button>
+            </Link>
           </div>
         </div>
         <div className="w-full lg:flex-1 h-[300px] sm:h-[400px] lg:h-[600px]">

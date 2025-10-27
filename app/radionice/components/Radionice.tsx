@@ -48,9 +48,9 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
                 </div>
                 <div className="flex justify-between mt-4 items-center">
                   <h3 className="text-5xl">€{cijena}</h3>
-                  <button className="button yellow">
-                    <Link href={`/radionice/${slug}`}>Prijavi se</Link>
-                  </button>
+                  <Link href={`/radionice/${slug}`} className="w-fit">
+                    <button className="button yellow">Prijavi se</button>
+                  </Link>
                 </div>
               </div>
             </div>

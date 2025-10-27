@@ -16,9 +16,11 @@ const Story = () => {
             ne moraš biti umjetnik da bi stvarao; dovoljno je da dođeš otvorenog
             uma i prazne čaše.
           </p>
-          <button className="button blue w-full sm:w-auto">
-            <Link href="/radionice">Dođi se zabaviti kod nas!</Link>
-          </button>
+          <Link href="/radionice" className="w-fit">
+            <button className="button blue w-full sm:w-auto">
+              Dođi se zabaviti kod nas!
+            </button>
+          </Link>
         </div>
         <div className="flex justify-center flex-1 w-full relative">
           <div className=" h-[300px] sm:h-[400px] lg:h-[500px]">

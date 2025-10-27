@@ -12,9 +12,9 @@ const CTA = () => {
           Pridružite se našim radionicama i stvorite vlastite nezaboravne
           trenutke
         </p>
-        <button className="button yellow">
-          <Link href="/radionice">Pogledajte naše radionice</Link>
-        </button>
+        <Link href="/radionice" className="w-fit">
+          <button className="button yellow">Pogledajte naše radionice</button>
+        </Link>
       </div>
     </section>
   );

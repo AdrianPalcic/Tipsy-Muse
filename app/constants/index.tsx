@@ -184,6 +184,7 @@ export const radionice = [
     ukljuceno: ["Vino", "Boje", "Kist", "Zabava"],
     image: "/screenshot_0006s.jpg",
     lokacija: " Maksimirska 141A",
+    trajanje: 4,
   },
   {
     id: 2,
@@ -201,6 +202,7 @@ export const radionice = [
     ukljuceno: ["Prosecco", "Platno", "Boje", "Kistovi"],
     image: "/screenshot_0008s.jpg",
     lokacija: " Maksimirska 141A",
+    trajanje: 3,
   },
   {
     id: 3,
@@ -218,6 +220,7 @@ export const radionice = [
     ukljuceno: ["Kokteli", "Boje", "Platno", "Instruktor"],
     image: "/screenshot_0010s.jpg",
     lokacija: " Maksimirska 141A",
+    trajanje: 2,
   },
   {
     id: 4,
@@ -235,6 +238,7 @@ export const radionice = [
     ukljuceno: ["Čaša vina", "Platno", "Boje", "Instruktor"],
     image: "/screenshot_0012s.jpg",
     lokacija: " Maksimirska 141A",
+    trajanje: 3,
   },
   {
     id: 5,
@@ -252,6 +256,7 @@ export const radionice = [
     ukljuceno: ["Kokteli", "Boje", "Platno", "Dobra atmosfera"],
     image: "/screenshot_0014s.jpg",
     lokacija: " Maksimirska 141A",
+    trajanje: 2,
   },
 ];
 

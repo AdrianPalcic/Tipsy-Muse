@@ -13,4 +13,5 @@ interface Radionice {
   image: string;
   slug: string;
   lokacija: string;
+  trajanje: number;
 }

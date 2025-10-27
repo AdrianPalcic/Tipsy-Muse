@@ -13,9 +13,9 @@ const Gallery = () => {
           Malo vina, puno ideja. Tipsy Muse spaja kreativnost, razgovor i
           umjetnost — jer najbolje misli ne dolaze za stolom,{" "}
         </p>
-        <button className="button blue">
-          <Link href="/radionice">Dođi se Zabaviti!</Link>
-        </button>
+        <Link href="/radionice" className="w-fit">
+          <button className="button blue">Dođi se Zabaviti!</button>
+        </Link>
 
         <div className="mt-12 sm:mt-16 lg:mt-20 w-full overflow-hidden">
           <div className="carousel-container">

@@ -15,9 +15,9 @@ const HowWeWork = () => {
           gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj svoje
           mjesto za dozu umjetnosti uz čašu vina.
         </p>
-        <button className="button red">
-          <Link href="/radionice">Pretraži Naše Radionice</Link>
-        </button>
+        <Link href="/radionice" className="w-fit">
+          <button className="button red">Pretraži Naše Radionice</button>
+        </Link>
 
         <div className="flex flex-col lg:flex-row gap-6 mt-10">
           {howWeWork.map((work) => (

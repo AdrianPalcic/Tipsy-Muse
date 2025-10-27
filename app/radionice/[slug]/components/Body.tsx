@@ -206,9 +206,11 @@ const Body = ({ slug }: { slug: string }) => {
             Naš tim je tu da vam pomogne! Kontaktirajte nas za sve dodatne
             informacije.
           </p>
-          <Link href="/kontakt" className="w-fit mx-auto">
-            <button className="button red">Kontaktirajte nas</button>
-          </Link>
+          <div className="w-fit mx-auto">
+            <Link href="/kontakt" className="w-fit mx-auto">
+              <button className="button red">Kontaktirajte nas</button>
+            </Link>
+          </div>
         </div>
       </section>
     </main>

@@ -39,7 +39,7 @@
     @apply px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 bg-tetriary-dark border-3 border-black rounded-md duration-200 transition-all hover:translate-y-1.5 hover:translate-x-1.5 cursor-pointer hover:shadow-[1px_1px_0px_rgba(0,0,0,0)];
   }
   .cat {
-    @apply border border-solid border-tetriary p-2 cursor-pointer duration-200 transition-colors hover:bg-secondary font-luckiest-guy;
+    @apply border border-solid border-tetriary p-2 cursor-pointer duration-200 transition-colors hover:bg-secondary font-luckiest-guy text-white;
   }
   .active {
     @apply text-white bg-tetriary shadow-[2px_2px_0px_#fff600];

@@ -42,7 +42,7 @@ const Kalendar = () => {
     const date = formattedDate(day);
     setSelectedDay(date);
     const activeRadionica = workshops.find(
-      (radionica) => radionica.date === selectedDay
+      (radionica) => radionica.date === date
     );
     if (!activeRadionica) return;
     router.push(`/radionice/${activeRadionica.slug}`);

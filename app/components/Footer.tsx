@@ -12,15 +12,15 @@ const Footer = () => {
   return (
     <footer className="bg-tetriary-dark border-t-4 border-primary py-12 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
-          {/* Logo and Social Section */}
           <div className="flex flex-col items-center md:items-start">
-            <img
-              src="/Logo.png"
-              alt="Tipsy Muse Logo"
-              className="w-32 mb-4"
-            />
+            <Link href="/">
+              <img
+                src="/Logo.png"
+                alt="Tipsy Muse Logo"
+                className="w-32 mb-4"
+              />
+            </Link>
             <p className="text-white text-center md:text-left text-sm mb-4 max-w-xs">
               Studio za zabavu, druženje i kreativno izražavanje.
             </p>
@@ -57,7 +57,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Brzi Linkovi (Quick Links) */}
           <div className="text-center md:text-left">
             <h3 className="text-secondary text-2xl font-luckiest-guy mb-4">
               BRZI LINKOVI
@@ -142,4 +141,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

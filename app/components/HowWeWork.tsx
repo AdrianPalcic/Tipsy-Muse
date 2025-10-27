@@ -1,5 +1,6 @@
 import React from "react";
 import { howWeWork } from "../constants";
+import Link from "next/link";
 
 const HowWeWork = () => {
   return (
@@ -14,7 +15,9 @@ const HowWeWork = () => {
           gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj svoje
           mjesto za dozu umjetnosti uz čašu vina.
         </p>
-        <button className="button red">Pretraži Naše Radionice</button>
+        <button className="button red">
+          <Link href="/radionice">Pretraži Naše Radionice</Link>
+        </button>
 
         <div className="flex flex-col lg:flex-row gap-6 mt-10">
           {howWeWork.map((work) => (

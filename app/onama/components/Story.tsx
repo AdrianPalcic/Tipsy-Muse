@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Story = () => {
@@ -16,7 +17,7 @@ const Story = () => {
             uma i prazne čaše.
           </p>
           <button className="button blue w-full sm:w-auto">
-            Dođi se zabaviti kod nas!
+            <Link href="/radionice">Dođi se zabaviti kod nas!</Link>
           </button>
         </div>
         <div className="flex justify-center flex-1 w-full relative">

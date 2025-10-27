@@ -1,5 +1,6 @@
 import React from "react";
 import { kategorije } from "../constants";
+import Link from "next/link";
 
 const KategorijeRadionica = () => {
   return (
@@ -20,7 +21,7 @@ const KategorijeRadionica = () => {
               svoje mjesto za dozu umjetnosti uz čašu vina.
             </p>
             <button className="button blue w-full sm:w-auto">
-              Pogledaj radionice
+              <Link href="/radionice">Pogledaj radionice</Link>
             </button>
           </div>
           <div className="flex justify-center flex-1 w-full relative">

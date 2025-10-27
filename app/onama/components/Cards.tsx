@@ -38,9 +38,11 @@ const Cards = () => {
           </div>
         ))}
       </div>
-      <Link href="/radionice" className="w-fit mt-12 mx-auto">
-        <button className="button blue">Dođi se uvjeriti</button>
-      </Link>
+      <div className="w-fit mt-6 mx-auto">
+        <Link href="/radionice" className="w-fit mt-12 mx-auto">
+          <button className="button blue">Dođi se uvjeriti</button>
+        </Link>
+      </div>
     </section>
   );
 };

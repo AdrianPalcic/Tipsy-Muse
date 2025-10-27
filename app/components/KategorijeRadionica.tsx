@@ -20,11 +20,13 @@ const KategorijeRadionica = () => {
               gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj
               svoje mjesto za dozu umjetnosti uz čašu vina.
             </p>
-            <Link href="/radionice" className="w-fit">
-              <button className="button blue w-full sm:w-auto">
-                Pogledaj radionice
-              </button>
-            </Link>
+            <div className="w-fit">
+              <Link href="/radionice" className="w-fit">
+                <button className="button blue w-full sm:w-auto">
+                  Pogledaj radionice
+                </button>
+              </Link>
+            </div>
           </div>
           <div className="flex justify-center flex-1 w-full relative">
             <div className=" h-[300px] sm:h-[400px] lg:h-[500px]">

@@ -87,9 +87,11 @@ const Kalendar = () => {
               U slučaju da imate nekakva pitanja vezana uz naše datume,
               radionice ili općenito želite o nečemu popričati.
             </p>
-            <Link href={"/kontakt"} className="w-fit mx-auto sm:mx-0">
-              <button className="button red">Kontaktiraj Nas</button>
-            </Link>
+            <div className="w-fit">
+              <Link href={"/kontakt"} className="w-fit mx-auto sm:mx-0">
+                <button className="button red">Kontaktiraj Nas</button>
+              </Link>
+            </div>
           </div>
           <div className="hidden lg:flex justify-center flex-1">
             <img

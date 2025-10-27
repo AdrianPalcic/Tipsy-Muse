@@ -1,6 +1,7 @@
 "use client";
 
 import { info } from "@/app/constants";
+import { Send } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -69,6 +70,10 @@ const Form = () => {
                 className="border-2 border-secondary border-solid py-3 px-3 font-baloo font-semibold mt-2 bg-tetriary-dark text-[#5800B2] text-[16px] h-[200px]"
               ></textarea>
             </div>
+            <button className="button yellow flex items-center gap-4">
+              <Send />
+              <span>Pošaljite poruku</span>
+            </button>
           </div>
         </form>
       </div>

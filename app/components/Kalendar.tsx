@@ -18,6 +18,9 @@ const Kalendar = () => {
   const currentMonth = today.getMonth();
   const currentDate = today.getDate();
 
+  const [displayedYear, setDisplayedYear] = useState(currentYear);
+  const [displayedMonth, setDisplayedMonth] = useState(currentMonth);
+
   useEffect(() => {
     setWorkshops(radionice);
 
@@ -31,12 +34,12 @@ const Kalendar = () => {
       return days;
     };
 
-    const monthDays = getDaysInMonth(currentYear, currentMonth);
+    const monthDays = getDaysInMonth(displayedYear, displayedMonth);
     setDays(monthDays);
 
     const radionicesDates = radionice.map((radionica) => radionica.date);
     setActiveDays(radionicesDates);
-  }, [currentYear, currentMonth]);
+  }, [displayedYear, displayedMonth]);
 
   const handleClick = (day: Date) => {
     const date = formattedDate(day);
@@ -47,6 +50,27 @@ const Kalendar = () => {
     if (!activeRadionica) return;
     router.push(`/radionice/${activeRadionica.slug}`);
   };
+
+  const handlePreviousMonth = () => {
+    if (displayedMonth === 0) {
+      setDisplayedMonth(11);
+      setDisplayedYear(displayedYear - 1);
+    } else {
+      setDisplayedMonth(displayedMonth - 1);
+    }
+  };
+
+  const handleNextMonth = () => {
+    if (displayedMonth === 11) {
+      setDisplayedMonth(0);
+      setDisplayedYear(displayedYear + 1);
+    } else {
+      setDisplayedMonth(displayedMonth + 1);
+    }
+  };
+
+  const isCurrentMonth =
+    displayedYear === currentYear && displayedMonth === currentMonth;
 
   return (
     <section className="section-overlay-a section-padding">
@@ -62,9 +86,28 @@ const Kalendar = () => {
             </p>
             <div className="calendar w-full">
               <div className="p-3 sm:p-4 lg:p-6 border-3 border-solid border-primary w-full rounded-md bg-tetriary-dark shadow-pink">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl text-white mb-4 text-center">
-                  {months[currentMonth]}, {currentYear}
-                </h3>
+                <div className="flex items-center justify-between mb-4">
+                  <button
+                    onClick={handlePreviousMonth}
+                    disabled={isCurrentMonth}
+                    className={`text-white text-xl sm:text-2xl font-bold px-3 py-1 rounded transition-colors ${
+                      isCurrentMonth
+                        ? "opacity-30 cursor-not-allowed"
+                        : "hover:bg-secondary cursor-pointer"
+                    }`}
+                  >
+                    ←
+                  </button>
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl text-white text-center">
+                    {months[displayedMonth]}, {displayedYear}
+                  </h3>
+                  <button
+                    onClick={handleNextMonth}
+                    className="text-white text-xl sm:text-2xl font-bold px-3 py-1 rounded hover:bg-secondary transition-colors cursor-pointer"
+                  >
+                    →
+                  </button>
+                </div>
                 <div className="grid grid-cols-7 gap-1 sm:gap-2">
                   {days.map((day) => {
                     const isPastDate =

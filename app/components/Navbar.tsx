@@ -16,7 +16,11 @@ const Navbar = () => {
           id="logo"
           className="w-[70px] h-[70px] sm:w-[100px] sm:h-[100px]"
         >
-          <img src="/Logo.png" alt="Tipsy Muse Logo" className="w-full h-full" />
+          <img
+            src="/Logo.png"
+            alt="Tipsy Muse Logo"
+            className="w-full h-full"
+          />
         </Link>
 
         {/* Desktop Links */}
@@ -24,17 +28,15 @@ const Navbar = () => {
           {links.map((link, index) => {
             const isLast = index === links.length - 1;
             return (
-              <li
+              <Link
                 key={link.text}
-                className={isLast ? "button blue text-black" : ""}
+                href={link.slug}
+                className={!isLast ? "nav-link relative" : ""}
               >
-                <Link
-                  href={link.slug}
-                  className={!isLast ? "nav-link relative" : ""}
-                >
+                <li className={isLast ? "button blue text-black" : ""}>
                   {link.text}
-                </Link>
-              </li>
+                </li>
+              </Link>
             );
           })}
         </ul>

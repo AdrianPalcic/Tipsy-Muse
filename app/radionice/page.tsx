@@ -5,6 +5,7 @@ import { useEffect, useState, useMemo } from "react";
 import { radionice } from "../constants";
 import { getDateRange, isDateInRange, parseDate } from "../utils";
 import Radionice from "./components/Radionice";
+import SpecialForm from "./components/SpecialForm";
 
 const page = () => {
   const [workShops, setWorkshops] = useState<Radionice[]>([]);
@@ -69,7 +70,19 @@ const page = () => {
         priceSort={priceSort}
         setPriceSort={setPriceSort}
       />
-      <Radionice radionice={filteredWorkshops} />
+      {workShops.length > 0 ? (
+        <Radionice radionice={filteredWorkshops} />
+      ) : (
+        <section className="section-overlay-b section-padding">
+          <h2 className="pt-10 text-center text-3xl ">
+            Nema radionica ovih parametara
+          </h2>
+          <p className="subtitle text-center">
+            Probajte filtrirati po drugim kategorijama ili datumima
+          </p>
+        </section>
+      )}
+      <SpecialForm />
     </main>
   );
 };

@@ -1,6 +1,5 @@
 import { Calendar, Clock, User } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
   return (

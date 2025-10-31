@@ -19,18 +19,35 @@ const page = () => {
   const filteredWorkshops = useMemo(() => {
     let filtered = [...workShops];
 
-    // 1. Filter by category
     if (activeCategory !== "Sve") {
       filtered = filtered.filter(
         (workshop) => workshop.kategorija === activeCategory
       );
     }
 
-    // 2. Filter by date range
     const dateRange = getDateRange(dateFilter);
     filtered = filtered.filter((workshop) =>
       isDateInRange(workshop.date, dateRange)
     );
+
+    const now = new Date();
+    filtered = filtered.filter((workshop) => {
+      const dateOnly = parseDate(workshop.date);
+      const [hoursStr, minutesStr] = workshop.time.split(":");
+      const hours = parseInt(hoursStr, 10);
+      const minutes = parseInt(minutesStr, 10);
+      const workshopDateTime = new Date(
+        dateOnly.getFullYear(),
+        dateOnly.getMonth(),
+        dateOnly.getDate(),
+        hours,
+        minutes,
+        0,
+        0
+      );
+
+      return workshopDateTime >= now;
+    });
 
     if (priceSort === "asc") {
       filtered.sort((a, b) => a.cijena - b.cijena);

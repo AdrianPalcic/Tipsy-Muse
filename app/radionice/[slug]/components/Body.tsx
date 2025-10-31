@@ -5,9 +5,11 @@ import { useEffect, useState } from "react";
 import Hero from "./Hero";
 import { Calendar, CheckCircle, MapPin, User } from "lucide-react";
 import Link from "next/link";
+import { parseDate } from "@/app/utils";
 
 const Body = ({ slug }: { slug: string }) => {
   const [radionica, setRadionica] = useState<Radionice | null>(null);
+  const [istekla, setIstekla] = useState<boolean>(false);
 
   const fetchRadionicaBySlug = (slug: string): Radionice | null => {
     const found = radionice.find((r) => r.slug === slug);
@@ -15,13 +17,49 @@ const Body = ({ slug }: { slug: string }) => {
   };
 
   useEffect(() => {
+    //prvo provjera je li danas dan radionice
+
+    //Uzeli smo vrijeme radionice koji je string,
+    // Onda smo napravili novi dan i postavili ga na ponoc
+    // Tada smo uzeli sate i minute od stringa iz radionce i pretvorili u broj,
+    // Extraactali smo te vrijednosti
+    //Stvorili novo vrijeme radionince koje se odnosi na danas, ali po njenom vremenu
     const fetchedRadionica = fetchRadionicaBySlug(slug);
+    if (!fetchedRadionica) return;
     setRadionica(fetchedRadionica);
+
+    const radionicaDateString = fetchedRadionica.date;
+    const radionicaDate = new Date(
+      radionicaDateString.split(".").reverse().join("-")
+    );
+    const today = new Date();
+    if (radionicaDate.toDateString() === today.toDateString()) {
+      const radionicaTimeString = fetchedRadionica.time;
+      const currentTime = new Date();
+
+      const [hours, minutes] = radionicaTimeString.split(":").map(Number);
+
+      const radionicaTime = new Date(today);
+      radionicaTime.setHours(hours, minutes, 0, 0);
+
+      console.log(radionicaTime, currentTime);
+
+      if (radionicaTime <= currentTime) {
+        setIstekla(true);
+      } else {
+        const timeDifference = radionicaTime.getTime() - currentTime.getTime();
+        const remainingMinutes = Math.ceil(timeDifference / (1000 * 60));
+
+        if (remainingMinutes <= 30) {
+          setIstekla(true);
+        }
+      }
+    }
   }, [slug]);
 
   if (!radionica) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
+      <main className="min-h-screen flex items-center justify-center section-overlay-a">
         <p className="text-white text-2xl">Radionica nije pronađena...</p>
       </main>
     );
@@ -128,36 +166,56 @@ const Body = ({ slug }: { slug: string }) => {
           </div>
           <div className="flex-1">
             <div className="radionica-stats mb-0 shadow-pink flex flex-col items-center">
-              <span className="text-white/70 mb-4">Cijena</span>
-              <h2 className="text-6xl">€{radionica.cijena}</h2>
-              <span className="text-white/70 my-4">Po osobi</span>
-              <Link href="/" className="w-full">
-                <button className="button red w-full">Prijavi se sada</button>
-              </Link>
-              <div className="bg-red-900/60 border-3 border-red-600 w-full py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">
-                {" "}
-                Samo još {freeSpace} mjesta
-              </div>
+              {!istekla ? (
+                <>
+                  <span className="text-white/70 mb-4">Cijena</span>
+                  <h2 className="text-6xl">€{radionica.cijena}</h2>
+                  <span className="text-white/70 my-4">Po osobi</span>
+                  <Link href="/" className="w-full">
+                    <button className="button red w-full">
+                      Prijavi se sada
+                    </button>
+                  </Link>
+                  <div className="bg-red-900/60 border-3 border-red-600 w-full py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">
+                    {" "}
+                    Samo još {freeSpace} mjesta
+                  </div>
 
-              <div className="border-t-2 border-b-2 border-secondary/70 py-4 w-full mb-4">
-                <div className="flex justify-between text-secondary mb-4">
-                  <p className="font-luckiest-guy">Trajanje</p>
-                  <span className="text-[16px]">{radionica.trajanje}h</span>
-                </div>
-                <div className="flex justify-between text-secondary mb-4">
-                  <p className="font-luckiest-guy">Kapacitet</p>
-                  <span className="text-[16px]">{radionica.kapacitet}</span>
-                </div>
-                <div className="flex justify-between text-secondary">
-                  <p className="font-luckiest-guy">Lokacija</p>
-                  <span className="text-[16px]">{radionica.lokacija}h</span>
-                </div>
-              </div>
-              <Link href="/radionice" className="w-full">
-                <div className="w-full py-3 px-6 border border-secondary flex items-center justify-center font-luckiest-guy text-secondary duration-200 transition-colors hover:bg-secondary/30">
-                  Natrag na radionice
-                </div>
-              </Link>
+                  <div className="border-t-2 border-b-2 border-secondary/70 py-4 w-full mb-4">
+                    <div className="flex justify-between text-secondary mb-4">
+                      <p className="font-luckiest-guy">Trajanje</p>
+                      <span className="text-[16px]">{radionica.trajanje}h</span>
+                    </div>
+                    <div className="flex justify-between text-secondary mb-4">
+                      <p className="font-luckiest-guy">Kapacitet</p>
+                      <span className="text-[16px]">{radionica.kapacitet}</span>
+                    </div>
+                    <div className="flex justify-between text-secondary">
+                      <p className="font-luckiest-guy">Lokacija</p>
+                      <span className="text-[16px]">{radionica.lokacija}h</span>
+                    </div>
+                  </div>
+                  <Link href="/radionice" className="w-full">
+                    <div className="w-full py-3 px-6 border border-secondary flex items-center justify-center font-luckiest-guy text-secondary duration-200 transition-colors hover:bg-secondary/30">
+                      Natrag na radionice
+                    </div>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <h2 className="text-3xl text-red-700 text-center mb-2">
+                    Nažalost, vrijeme rezervacija je završeno
+                  </h2>
+                  <p className="subtitle mb-2">
+                    Pogledajte neke druge radionica!
+                  </p>
+                  <Link href="/radionice" className="w-full">
+                    <div className="w-full py-3 px-6 border border-secondary flex items-center justify-center font-luckiest-guy text-secondary duration-200 transition-colors hover:bg-secondary/30">
+                      Natrag na radionice
+                    </div>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -33,7 +33,7 @@ export const kategorije = [
     img: "/note.png",
   },
   {
-    name: "Cocktails & Paint",
+    name: "Wine & Makeup",
     description:
       "Na ovim opuštenim radionicama spajamo umjetnost i zabavu! Uz čašu vina i smijeh u dobrom društvu, vodimo vas korak po korak kroz proces slikanja dok stvarate vlastito umjetničko djelo — bez ikakvog prethodnog iskustva.",
     img: "/paint.png",
@@ -211,8 +211,8 @@ export const radionice = [
     title: "Cocktails & Paint",
     description:
       "Sip your favorite cocktail while painting vibrant art — perfect for groups and special occasions.",
-    date: "24.11.2025",
-    time: "20:00",
+    date: "31.10.2025",
+    time: "17:00",
     kapacitet: 30,
     rezervirano: 22,
     cijena: 50,

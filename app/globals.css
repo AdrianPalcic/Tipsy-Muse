@@ -21,6 +21,9 @@
   body {
     font-family: var(--font-baloo);
     line-height: 1.6;
+    max-width: 1800px;
+    margin: 0 auto;
+    background-color: var(--color-tetriary);
   }
 }
 

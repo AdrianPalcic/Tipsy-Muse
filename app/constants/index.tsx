@@ -10,6 +10,10 @@ export const links = [
     slug: "/radionice",
   },
   {
+    text: "Naši Partneri",
+    slug: "/partneri",
+  },
+  {
     text: "Galerija",
     slug: "/galerija",
   },
@@ -118,25 +122,6 @@ export const info = [
     icon: <Mail color="#00ba95" size={40} />,
     label: "Email",
     value: "tipsymusezagreb@gmail.com",
-  },
-];
-
-export const stats = [
-  {
-    number: "5+",
-    text: "Godina Iskustva",
-  },
-  {
-    number: "1000+",
-    text: "Zadovoljnih Umjetnika",
-  },
-  {
-    number: "200+",
-    text: "Održanih Radionica",
-  },
-  {
-    number: "15+",
-    text: "Različitih Tehnika",
   },
 ];
 

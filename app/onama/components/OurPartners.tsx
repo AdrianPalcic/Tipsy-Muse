@@ -25,7 +25,7 @@ const OurPartners = () => {
               <img
                 src="/wine-cellar.jpg"
                 alt="Wine & Art vinski partneri"
-                className="w-full  h-full object-cover shadow-pink"
+                className="w-full  h-full object-cover "
               />
             </div>
             <h3 className="heading-three">Naši Vinski Partneri</h3>
@@ -41,7 +41,7 @@ const OurPartners = () => {
               <img
                 src="/venue.jpg"
                 alt="Wine & Art vinski partneri"
-                className="w-full h-full object-cover shadow-pink"
+                className="w-full h-full object-cover "
               />
             </div>
             <h3 className="heading-three">Naši Festivalski Partneri</h3>

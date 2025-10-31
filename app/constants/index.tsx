@@ -251,3 +251,50 @@ export const cats = [
   "Sip & Sparkle",
   "Cocktails & Paint",
 ];
+
+export const winePartners = [
+  {
+    id: 1,
+    name: "Vinarija Aurora",
+    description:
+      "Aurora spaja tradiciju i inovaciju u proizvodnji vina, stvarajući okuse koji ostaju u pamćenju.",
+    image: "/partneri.png",
+  },
+  {
+    id: 2,
+    name: "Dolina Vina",
+    description:
+      "Obitelj Dolina Vina njeguje vinogradarstvo s ljubavlju, nudeći vrhunska vina i nezaboravne degustacije.",
+    image: "/partneri.png",
+  },
+  {
+    id: 3,
+    name: "Vinarija Solaris",
+    description:
+      "Solaris kombinira moderne tehnike i strast prema tradiciji kako bi stvorio jedinstvena vina.",
+    image: "/partneri.png",
+  },
+];
+export const festivalPartners = [
+  {
+    id: 1,
+    name: "Festival Umjetnosti i Vina",
+    description:
+      "Spoj glazbe, umjetnosti i vina u vibrantnom i inspirativnom okruženju.",
+    image: "/partneri.png",
+  },
+  {
+    id: 2,
+    name: "Ljeto Kreativnosti",
+    description:
+      "Festival posvećen kreativnosti, radionica i umjetničkim performansima na otvorenom.",
+    image: "/partneri.png",
+  },
+  {
+    id: 3,
+    name: "Noć Kreativnih Zvukova",
+    description:
+      "Glazba, performansi i interaktivne umjetničke instalacije koje nadahnjuju posjetitelje.",
+    image: "/partneri.png",
+  },
+];

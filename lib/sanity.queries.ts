@@ -5,28 +5,28 @@ import { client } from "./sanity";
 // npm install @sanity/image-url
 export function getSanityImageUrl(image: any): string {
   if (!image || !image.asset) return "";
-  
+
   const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
   const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
-  
+
   // Sanity image reference format: image-{id}-{width}x{height}-{format}
   const ref = image.asset._ref || image.asset._id;
-  
+
   if (typeof ref === "string" && ref.startsWith("image-")) {
     // Extract parts from reference
     const parts = ref.replace("image-", "").split("-");
     const id = parts[0];
     const dimensions = parts[1]; // format: widthxheight
     const format = parts[2] || "jpg";
-    
+
     return `https://cdn.sanity.io/images/${projectId}/${dataset}/${id}-${dimensions}.${format}`;
   }
-  
+
   // Fallback: if asset has url property (from API response)
   if (image.asset.url) {
     return image.asset.url;
   }
-  
+
   return "";
 }
 
@@ -37,7 +37,7 @@ export const queries = {
     _id,
     naslov,
     slug,
-    kategorija->ime,
+    "kategorija": coalesce(kategorija->ime, ""),
     opis,
     datum,
     vrijeme,
@@ -62,7 +62,7 @@ export const queries = {
     _id,
     naslov,
     slug,
-    kategorija->ime,
+    "kategorija": coalesce(kategorija->ime, ""),
     opis,
     datum,
     vrijeme,
@@ -139,4 +139,3 @@ export async function getAllWinePartners() {
 export async function getAllFestivalPartners() {
   return await client.fetch(queries.getAllFestivalPartners);
 }
-

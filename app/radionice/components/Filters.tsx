@@ -19,6 +19,7 @@ const Filters = ({
   setDateFilter,
   priceSort,
   setPriceSort,
+  kategorije = cats, // Use Sanity kategorije if provided, fallback to constants
 }: {
   activeCat: string;
   setActiveCat: React.Dispatch<React.SetStateAction<string>>;
@@ -26,6 +27,7 @@ const Filters = ({
   setDateFilter: React.Dispatch<React.SetStateAction<string>>;
   priceSort: "none" | "asc" | "desc";
   setPriceSort: React.Dispatch<React.SetStateAction<"none" | "asc" | "desc">>;
+  kategorije?: string[];
 }) => {
   const [showDateDropdown, setShowDateDropdown] = useState(false);
   const [activeSortType, setActiveSortType] = useState<"date" | "price">(
@@ -74,10 +76,10 @@ const Filters = ({
             Kategorije
           </p>
           <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4">
-            {cats.map((cat) => (
+            {kategorije.map((cat, idx) => (
               <div
                 onClick={() => handleCatChange(cat)}
-                key={cat}
+                key={idx}
                 className={`cat text-xs sm:text-sm md:text-base px-3 py-1.5 sm:px-4 sm:py-2 ${
                   activeCat === cat ? "active" : ""
                 }`}

@@ -15,3 +15,7 @@ interface Radionice {
   lokacija: string;
   trajanje: number;
 }
+interface kategorije {
+  id: string;
+  ime: string;
+}

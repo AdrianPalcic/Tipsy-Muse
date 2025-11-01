@@ -6,15 +6,38 @@ import { radionice } from "../constants";
 import { getDateRange, isDateInRange, parseDate } from "../utils";
 import Radionice from "./components/Radionice";
 import SpecialForm from "./components/SpecialForm";
+import { getAllKategorije, getAllRadionice } from "@/lib/sanity.queries";
 
 const page = () => {
   const [workShops, setWorkshops] = useState<Radionice[]>([]);
   const [activeCategory, setActiveCategory] = useState("Sve");
   const [dateFilter, setDateFilter] = useState("Svi datumi");
   const [priceSort, setPriceSort] = useState<"none" | "asc" | "desc">("none");
+  const [kategorije, setKategorije] = useState<string[]>([]);
 
   useEffect(() => {
-    setWorkshops(radionice);
+    getAllRadionice()
+      .then((data) => {
+        console.log("Radionice :", data);
+        if (data.length < 1) {
+          setWorkshops(radionice);
+        } else {
+          setWorkshops(data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching radionice:", error);
+      });
+
+    getAllKategorije()
+      .then((data) => {
+        console.log("Kategorije:", data);
+        const categoryNames = ["Sve", ...data.map((k: kategorije) => k.ime)];
+        setKategorije(categoryNames);
+      })
+      .catch((error) => {
+        console.error("Error fetching kategorije:", error);
+      });
   }, []);
 
   const filteredWorkshops = useMemo(() => {
@@ -69,6 +92,7 @@ const page = () => {
         setDateFilter={setDateFilter}
         priceSort={priceSort}
         setPriceSort={setPriceSort}
+        kategorije={kategorije.length > 0 ? kategorije : undefined}
       />
       {workShops.length > 0 ? (
         <Radionice radionice={filteredWorkshops} />

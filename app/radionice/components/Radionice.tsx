@@ -8,10 +8,10 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
         {radionice.map((radionica) => {
           const {
             image,
-            title,
-            description,
-            date,
-            time,
+            naslov,
+            opis,
+            datum,
+            vrijeme,
             kapacitet,
             rezervirano,
             cijena,
@@ -26,20 +26,20 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
               <div className="relative w-full h-[250px] mb-4">
                 <img
                   src={image}
-                  alt={title}
+                  alt={naslov}
                   className="w-full h-full object-cover rounded-tl-md rounded-tr-md"
                 />
                 <span className="absolute top-6 right-6 tag">{kategorija}</span>
               </div>
               <div id="content" className="px-4 pb-4">
-                <h3 className="heading-three ">{title}</h3>
-                <p className="subtitle">{description.slice(0, 100)}...</p>
+                <h3 className="heading-three ">{naslov}</h3>
+                <p className="subtitle">{opis.slice(0, 100)}...</p>
                 <div className="flex flex-col gap-3 pb-3 border-b border-secondary/30">
                   <div className="flex gap-4 items-center font-bold text-secondary">
-                    <Calendar /> <span>{date}</span>
+                    <Calendar /> <span>{datum}</span>
                   </div>
                   <div className="flex gap-4 items-center font-bold text-secondary">
-                    <Clock /> <span>{time}h</span>
+                    <Clock /> <span>{vrijeme}h</span>
                   </div>
                   <div className="flex gap-4 items-center font-bold text-secondary">
                     <User /> <span>{freeSpace} mjesta preostalo</span>

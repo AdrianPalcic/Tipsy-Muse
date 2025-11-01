@@ -1,6 +1,5 @@
 "use client";
 
-import { radionice } from "@/app/constants";
 import { useEffect, useState, useRef } from "react";
 import Hero from "./Hero";
 import {
@@ -14,12 +13,10 @@ import {
 import Link from "next/link";
 import { parseDate } from "@/app/utils";
 import { screenshots } from "@/app/constants";
-import Spinner from "@/app/components/Spinner";
 
-const Body = ({ radionica }: { radionica: Radionice[] }) => {
+const Body = ({ radionica }: { radionica: Radionice }) => {
   const [istekla, setIstekla] = useState<boolean>(false);
   const [exists, setExists] = useState<boolean>(true);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const carouselImages = screenshots;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -65,10 +62,6 @@ const Body = ({ radionica }: { radionica: Radionice[] }) => {
       setExists(false);
     }
   }, [radionica]);
-
-  if (isLoading) {
-    return <Spinner />;
-  }
 
   if (!radionica) {
     return (

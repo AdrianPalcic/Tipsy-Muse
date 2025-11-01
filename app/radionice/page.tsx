@@ -2,10 +2,10 @@
 import Hero from "./components/Hero";
 import Filters from "./components/Filters";
 import { useEffect, useState, useMemo } from "react";
-import { radionice } from "../constants";
 import { getDateRange, isDateInRange, parseDate } from "../utils";
 import Radionice from "./components/Radionice";
 import SpecialForm from "./components/SpecialForm";
+import Spinner from "../components/Spinner";
 import { getAllKategorije, getAllRadionice } from "@/lib/sanity.queries";
 
 const page = () => {
@@ -14,27 +14,30 @@ const page = () => {
   const [dateFilter, setDateFilter] = useState("Svi datumi");
   const [priceSort, setPriceSort] = useState<"none" | "asc" | "desc">("none");
   const [kategorije, setKategorije] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getAllRadionice()
-      .then((data) => {
-        console.log("Radionice :", data);
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        
+        const [radioniceData, kategorijeData] = await Promise.all([
+          getAllRadionice(),
+          getAllKategorije(),
+        ]);
 
-        setWorkshops(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching radionice:", error);
-      });
+        setWorkshops(radioniceData);
 
-    getAllKategorije()
-      .then((data) => {
-        console.log("Kategorije:", data);
-        const categoryNames = ["Sve", ...data.map((k: kategorije) => k.ime)];
+        const categoryNames = ["Sve", ...kategorijeData.map((k: kategorije) => k.ime)];
         setKategorije(categoryNames);
-      })
-      .catch((error) => {
-        console.error("Error fetching kategorije:", error);
-      });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const filteredWorkshops = useMemo(() => {
@@ -91,7 +94,14 @@ const page = () => {
         setPriceSort={setPriceSort}
         kategorije={kategorije.length > 0 ? kategorije : undefined}
       />
-      {filteredWorkshops.length > 0 ? (
+      
+      {isLoading ? (
+        <section className="section-overlay-b section-padding">
+          <div className="flex justify-center items-center py-20">
+            <Spinner />
+          </div>
+        </section>
+      ) : filteredWorkshops.length > 0 ? (
         <Radionice radionice={filteredWorkshops} />
       ) : (
         <section className="section-overlay-b section-padding">

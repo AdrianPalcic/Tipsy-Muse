@@ -114,7 +114,7 @@ const Filters = ({
               </div>
 
               {showDateDropdown && activeSortType === "date" && (
-                <div className="absolute top-full mt-2 left-0 right-0 sm:left-0 sm:right-auto bg-[#1a1a2e] border border-fifth rounded-lg shadow-lg z-10 min-w-[160px] sm:min-w-[180px] max-w-[200px]">
+                <div className="absolute top-full mt-2 left-0 right-0 sm:left-0 sm:right-auto bg-[#1a1a2e] border border-fifth rounded-lg shadow-lg z-10 min-w-40 sm:min-w-[180px] max-w-[200px]">
                   {dateOptions.map((option) => (
                     <div
                       key={option}

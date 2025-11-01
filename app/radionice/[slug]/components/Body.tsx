@@ -118,8 +118,8 @@ const Body = ({ slug }: { slug: string }) => {
         <>
           <Hero
             image={radionica.image}
-            title={radionica.title}
-            description={radionica.description}
+            title={radionica.naslov}
+            description={radionica.opis}
             kategorija={radionica.kategorija}
           />
           <section className="section-overlay-a section-padding pt-20 px-2 sm:px-12 border-t-3 border-b-3 border-secondary pb-15">
@@ -132,7 +132,9 @@ const Body = ({ slug }: { slug: string }) => {
                       <h4 className="text-2xl font-luckiest-guy text-white">
                         Datum
                       </h4>
-                      <p className="text-white text-[16px]">{radionica.date}</p>
+                      <p className="text-white text-[16px]">
+                        {radionica.datum}
+                      </p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -176,11 +178,7 @@ const Body = ({ slug }: { slug: string }) => {
                   </div>
                   <div className="px-6 mt-4">
                     <ul className="list-disc text-white font-semibold sm:text-xl text-lg">
-                      {radionica.doing.map((thing) => (
-                        <li className="pb-2" key={thing}>
-                          {thing}
-                        </li>
-                      ))}
+                      <li className="pb-2">{radionica.opisRada}</li>
                     </ul>
                   </div>
                 </div>
@@ -193,11 +191,7 @@ const Body = ({ slug }: { slug: string }) => {
                   </div>
                   <div className="px-6 mt-4">
                     <ul className="list-disc text-white font-semibold sm:text-xl text-lg">
-                      {radionica.ukljuceno.map((thing) => (
-                        <li className="pb-2" key={thing}>
-                          {thing}
-                        </li>
-                      ))}
+                      <li className="pb-2">{radionica.ukljuceno}</li>
                     </ul>
                   </div>
                 </div>

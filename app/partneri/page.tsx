@@ -23,10 +23,10 @@ const page = () => {
             >
               <div className="flex-1 w-full text-center lg:text-left">
                 <h3 className="title text-secondary shadow-blue-text mb-2">
-                  {partner.name}
+                  {partner.ime}
                 </h3>
                 <p className="subtitle mx-auto lg:mx-0 max-w-2xl">
-                  {partner.description}
+                  {partner.opis}
                 </p>
               </div>
               <Link
@@ -35,7 +35,7 @@ const page = () => {
               >
                 <img
                   src={partner.image}
-                  alt={partner.name}
+                  alt={partner.ime}
                   className="w-full h-full object-cover shadow-pink rounded-md duration-200 transition-all group-hover:translate-x-1.5 group-hover:translate-y-1.5 group-hover:shadow-[1px_1px_0px_rgba(0,0,0,0)]"
                   loading="lazy"
                 />
@@ -62,10 +62,10 @@ const page = () => {
             >
               <div className="flex-1 w-full text-center lg:text-left">
                 <h3 className="title text-secondary shadow-blue-text mb-2">
-                  {partner.name}
+                  {partner.ime}
                 </h3>
                 <p className="subtitle mx-auto lg:mx-0 max-w-2xl">
-                  {partner.description}
+                  {partner.opis}
                 </p>
               </div>
               <Link
@@ -74,7 +74,7 @@ const page = () => {
               >
                 <img
                   src={partner.image}
-                  alt={partner.name}
+                  alt={partner.ime}
                   className="w-full h-full object-cover shadow-pink rounded-md duration-200 transition-all group-hover:translate-x-1.5 group-hover:translate-y-1.5 group-hover:shadow-[1px_1px_0px_rgba(0,0,0,0)]"
                   loading="lazy"
                 />

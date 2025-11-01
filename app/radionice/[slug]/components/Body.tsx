@@ -47,8 +47,8 @@ const Body = ({ slug }: { slug: string }) => {
     }
     setRadionica(fetchedRadionica);
     setIsLoading(false);
-    const radionicaDateString = fetchedRadionica.date;
-    const radionicaTimeString = fetchedRadionica.time;
+    const radionicaDateString = fetchedRadionica.datum;
+    const radionicaTimeString = fetchedRadionica.vrijeme;
     const [hours, minutes] = radionicaTimeString.split(":").map(Number);
 
     const today = new Date();
@@ -165,7 +165,9 @@ const Body = ({ slug }: { slug: string }) => {
                       <h4 className="text-lg sm:text-2xl font-luckiest-guy text-white">
                         Vrijeme
                       </h4>
-                      <p className="text-white text-[16px]">{radionica.time}</p>
+                      <p className="text-white text-[16px]">
+                        {radionica.vrijeme}
+                      </p>
                     </div>
                   </div>
                 </div>

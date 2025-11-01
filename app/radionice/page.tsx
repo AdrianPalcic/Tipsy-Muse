@@ -19,11 +19,8 @@ const page = () => {
     getAllRadionice()
       .then((data) => {
         console.log("Radionice :", data);
-        if (data.length < 1) {
-          setWorkshops(radionice);
-        } else {
-          setWorkshops(data);
-        }
+
+        setWorkshops(data);
       })
       .catch((error) => {
         console.error("Error fetching radionice:", error);

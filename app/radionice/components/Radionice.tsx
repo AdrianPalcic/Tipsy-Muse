@@ -16,16 +16,16 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
             rezervirano,
             cijena,
             slug,
-            id,
+            _id,
             kategorija,
           } = radionica;
 
           const freeSpace = kapacitet - rezervirano;
           return (
-            <div className="radionica shadow-pink " key={id}>
+            <div className="radionica shadow-pink " key={_id}>
               <div className="relative w-full h-[250px] mb-4">
                 <img
-                  src={image}
+                  src={image?.asset.url}
                   alt={naslov}
                   className="w-full h-full object-cover rounded-tl-md rounded-tr-md"
                 />
@@ -47,7 +47,7 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
                 </div>
                 <div className="flex justify-between mt-4 items-center">
                   <h3 className="text-5xl">€{cijena}</h3>
-                  <Link href={`/radionice/${slug}`} className="w-fit">
+                  <Link href={`/radionice/${slug.current}`} className="w-fit">
                     <button className="button yellow">Prijavi se</button>
                   </Link>
                 </div>

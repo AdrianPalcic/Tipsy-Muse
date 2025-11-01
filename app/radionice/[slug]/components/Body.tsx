@@ -15,6 +15,7 @@ import Link from "next/link";
 import { parseDate } from "@/app/utils";
 import { screenshots } from "@/app/constants";
 import Spinner from "@/app/components/Spinner";
+import { getRadionicaBySlug } from "@/lib/sanity.queries";
 
 const Body = ({ slug }: { slug: string }) => {
   const [radionica, setRadionica] = useState<Radionice | null>(null);
@@ -24,12 +25,16 @@ const Body = ({ slug }: { slug: string }) => {
   const carouselImages = screenshots;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const fetchRadionicaBySlug = (slug: string): Radionice | null => {
-    const found = radionice.find((r) => r.slug === slug);
-    return found || null;
-  };
-
   useEffect(() => {
+    getRadionicaBySlug(slug)
+      .then((data) => {
+        console.log("Radionice :", data);
+
+        setRadionica(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching radionice:", error);
+      });
     //prvo - provjera je li radionica u prošlosti
 
     //drugo - provjera je li danas dan radionice
@@ -39,16 +44,10 @@ const Body = ({ slug }: { slug: string }) => {
     // Tada smo uzeli sate i minute od stringa iz radionce i pretvorili u broj,
     // Extraactali smo te vrijednosti
     //Stvorili novo vrijeme radionince koje se odnosi na danas, ali po njenom vremenu
-    setIsLoading(true);
-    const fetchedRadionica = fetchRadionicaBySlug(slug);
-    if (!fetchedRadionica) {
-      setIsLoading(false);
-      return;
-    }
-    setRadionica(fetchedRadionica);
-    setIsLoading(false);
-    const radionicaDateString = fetchedRadionica.datum;
-    const radionicaTimeString = fetchedRadionica.vrijeme;
+
+    if (!radionica) return;
+    const radionicaDateString = radionica.datum;
+    const radionicaTimeString = radionica.vrijeme;
     const [hours, minutes] = radionicaTimeString.split(":").map(Number);
 
     const today = new Date();
@@ -117,7 +116,7 @@ const Body = ({ slug }: { slug: string }) => {
       {exists ? (
         <>
           <Hero
-            image={radionica.image}
+            image={radionica?.image.asset.url}
             title={radionica.naslov}
             description={radionica.opis}
             kategorija={radionica.kategorija}
@@ -242,7 +241,7 @@ const Body = ({ slug }: { slug: string }) => {
                         <div className="flex justify-between text-secondary">
                           <p className="font-luckiest-guy">Lokacija</p>
                           <span className="text-[16px]">
-                            {radionica.lokacija}h
+                            {radionica.lokacija}
                           </span>
                         </div>
                       </div>

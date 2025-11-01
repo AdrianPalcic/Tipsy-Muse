@@ -54,6 +54,13 @@ export const radioniceType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'rezervirano',
+      title: 'Koliko se ljudi prijavilo',
+      type: 'number',
+      initialValue: 1,
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'publishedAt',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),

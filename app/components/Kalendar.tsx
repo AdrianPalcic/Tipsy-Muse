@@ -5,6 +5,7 @@ import { months, radionice } from "../constants";
 import { formattedDate } from "../utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { getAllRadionice } from "@/lib/sanity.queries";
 
 const Kalendar = () => {
   const [days, setDays] = useState<Date[]>([]);
@@ -22,7 +23,13 @@ const Kalendar = () => {
   const [displayedMonth, setDisplayedMonth] = useState(currentMonth);
 
   useEffect(() => {
-    setWorkshops(radionice);
+    getAllRadionice()
+      .then((data) => {
+        setWorkshops(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching radionice:", error);
+      });
 
     const getDaysInMonth = (year: number, month: number) => {
       const date = new Date(year, month, 1);
@@ -48,7 +55,7 @@ const Kalendar = () => {
       (radionica) => radionica.datum === date
     );
     if (!activeRadionica) return;
-    router.push(`/radionice/${activeRadionica.slug}`);
+    router.push(`/radionice/${activeRadionica.slug.current}`);
   };
 
   const handlePreviousMonth = () => {

@@ -1,5 +1,5 @@
 interface Radionice {
-  id: number;
+  _id: string;
   kategorija: string;
   naslov: string;
   opis: string;
@@ -10,8 +10,17 @@ interface Radionice {
   cijena: number;
   opisRada: string;
   ukljuceno: string;
-  image: string;
-  slug: string;
+  image: {
+    asset: {
+      url: string;
+      _id: string;
+      _ref: string;
+    };
+  };
+  slug: {
+    current: string;
+    _type: string;
+  };
   lokacija: string;
   trajanje: number;
 }

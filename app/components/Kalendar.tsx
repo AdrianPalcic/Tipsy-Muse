@@ -37,7 +37,7 @@ const Kalendar = () => {
     const monthDays = getDaysInMonth(displayedYear, displayedMonth);
     setDays(monthDays);
 
-    const radionicesDates = radionice.map((radionica) => radionica.date);
+    const radionicesDates = radionice.map((radionica) => radionica.datum);
     setActiveDays(radionicesDates);
   }, [displayedYear, displayedMonth]);
 
@@ -45,7 +45,7 @@ const Kalendar = () => {
     const date = formattedDate(day);
     setSelectedDay(date);
     const activeRadionica = workshops.find(
-      (radionica) => radionica.date === date
+      (radionica) => radionica.datum === date
     );
     if (!activeRadionica) return;
     router.push(`/radionice/${activeRadionica.slug}`);

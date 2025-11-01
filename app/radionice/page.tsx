@@ -28,13 +28,13 @@ const page = () => {
 
     const dateRange = getDateRange(dateFilter);
     filtered = filtered.filter((workshop) =>
-      isDateInRange(workshop.date, dateRange)
+      isDateInRange(workshop.datum, dateRange)
     );
 
     const now = new Date();
     filtered = filtered.filter((workshop) => {
-      const dateOnly = parseDate(workshop.date);
-      const [hoursStr, minutesStr] = workshop.time.split(":");
+      const dateOnly = parseDate(workshop.datum);
+      const [hoursStr, minutesStr] = workshop.vrijeme.split(":");
       const hours = parseInt(hoursStr, 10);
       const minutes = parseInt(minutesStr, 10);
       const workshopDateTime = new Date(

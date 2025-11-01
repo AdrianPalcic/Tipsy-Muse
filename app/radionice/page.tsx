@@ -91,7 +91,7 @@ const page = () => {
         setPriceSort={setPriceSort}
         kategorije={kategorije.length > 0 ? kategorije : undefined}
       />
-      {workShops.length > 0 ? (
+      {filteredWorkshops.length > 0 ? (
         <Radionice radionice={filteredWorkshops} />
       ) : (
         <section className="section-overlay-b section-padding">

@@ -15,10 +15,8 @@ import Link from "next/link";
 import { parseDate } from "@/app/utils";
 import { screenshots } from "@/app/constants";
 import Spinner from "@/app/components/Spinner";
-import { getRadionicaBySlug } from "@/lib/sanity.queries";
 
-const Body = ({ slug }: { slug: string }) => {
-  const [radionica, setRadionica] = useState<Radionice | null>(null);
+const Body = ({ radionica }: { radionica: Radionice[] }) => {
   const [istekla, setIstekla] = useState<boolean>(false);
   const [exists, setExists] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -26,15 +24,6 @@ const Body = ({ slug }: { slug: string }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    getRadionicaBySlug(slug)
-      .then((data) => {
-        console.log("Radionice :", data);
-
-        setRadionica(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching radionice:", error);
-      });
     //prvo - provjera je li radionica u prošlosti
 
     //drugo - provjera je li danas dan radionice
@@ -75,7 +64,7 @@ const Body = ({ slug }: { slug: string }) => {
     } else if (radionicaDate < today) {
       setExists(false);
     }
-  }, [slug]);
+  }, [radionica]);
 
   if (isLoading) {
     return <Spinner />;

@@ -1,3 +1,4 @@
+import { getRadionicaBySlug } from "@/lib/sanity.queries";
 import Body from "./components/Body";
 
 export default async function RadionicaPage({
@@ -7,5 +8,7 @@ export default async function RadionicaPage({
 }) {
   const { slug } = await params;
 
-  return <Body slug={slug} />;
+  const radionica = await getRadionicaBySlug(slug);
+
+  return <Body radionica={radionica} />;
 }

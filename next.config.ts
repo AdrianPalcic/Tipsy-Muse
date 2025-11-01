@@ -1,16 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-    };
-    
-    // Exclude tipsy-db directory from webpack processing
-    config.watchOptions = {
-      ...config.watchOptions,
-      ignored: ['**/node_modules/**', '**/tipsy-db/**'],
-    };
+  webpack: (config, { webpack }) => {
+    // Ignore the tipsy-db directory completely
+    config.plugins.push(
+      new webpack.IgnorePlugin({
+        resourceRegExp: /tipsy-db/,
+      })
+    );
     
     return config;
   },

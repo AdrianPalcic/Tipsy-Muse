@@ -5,9 +5,11 @@ import {
   getAllWinePartners,
 } from "@/lib/sanity.queries";
 
+export const dynamic = "force-dynamic";
+
 const page = async () => {
-  let vinarije: any[] = [];
-  let festivali: any[] = [];
+  let vinarije: Partner[] = [];
+  let festivali: Partner[] = [];
 
   try {
     [vinarije, festivali] = await Promise.all([
@@ -16,8 +18,14 @@ const page = async () => {
     ]);
   } catch (error) {
     console.error("Error fetching partners:", error);
-    // Use empty arrays as fallback
   }
+
+  if (vinarije.length < 1 || festivali.length < 1)
+    return (
+      <div className="section-overlay-a section-padding py-44">
+        <h1 className="title shadow-pink-text">Trenutno nemamo partnere</h1>
+      </div>
+    );
 
   return (
     <main>
@@ -31,7 +39,7 @@ const page = async () => {
         </h2>
         <div className="flex flex-col gap-10 sm:gap-14 lg:gap-16 max-w-7xl mx-auto">
           {vinarije.length > 0 ? (
-            vinarije.map((partner: any, index: number) => (
+            vinarije.map((partner: Partner, index: number) => (
               <div
                 key={partner._id}
                 className={`flex flex-col ${

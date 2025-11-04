@@ -28,3 +28,17 @@ interface kategorije {
   id: string;
   ime: string;
 }
+
+interface Partner {
+  _id: string;
+  ime: string;
+  opis: string;
+  image: {
+    asset: {
+      url: string;
+      _id: string;
+      _ref: string;
+    };
+  };
+  url?: string;
+}

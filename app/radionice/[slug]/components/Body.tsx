@@ -11,7 +11,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
-import { parseDate } from "@/app/utils";
 import { screenshots } from "@/app/constants";
 
 const Body = ({ radionica }: { radionica: Radionice }) => {

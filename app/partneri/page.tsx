@@ -6,8 +6,18 @@ import {
 } from "@/lib/sanity.queries";
 
 const page = async () => {
-  const vinarije = await getAllWinePartners();
-  const festivali = await getAllFestivalPartners();
+  let vinarije: any[] = [];
+  let festivali: any[] = [];
+
+  try {
+    [vinarije, festivali] = await Promise.all([
+      getAllWinePartners(),
+      getAllFestivalPartners(),
+    ]);
+  } catch (error) {
+    console.error("Error fetching partners:", error);
+    // Use empty arrays as fallback
+  }
 
   return (
     <main>

@@ -123,21 +123,46 @@ export const queries = {
 
 // Helper functions to fetch data
 export async function getAllRadionice() {
-  return await client.fetch(queries.getAllRadionice);
+  try {
+    return await client.fetch(queries.getAllRadionice);
+  } catch (error) {
+    console.error("Error fetching radionice:", error);
+    return [];
+  }
 }
 
 export async function getRadionicaBySlug(slug: string) {
-  return await client.fetch(queries.getRadionicaBySlug, { slug });
+  try {
+    return await client.fetch(queries.getRadionicaBySlug, { slug });
+  } catch (error) {
+    console.error("Error fetching radionica by slug:", error);
+    return null;
+  }
 }
 
 export async function getAllKategorije() {
-  return await client.fetch(queries.getAllKategorije);
+  try {
+    return await client.fetch(queries.getAllKategorije);
+  } catch (error) {
+    console.error("Error fetching kategorije:", error);
+    return [];
+  }
 }
 
 export async function getAllWinePartners() {
-  return await client.fetch(queries.getAllWinePartners);
+  try {
+    return await client.fetch(queries.getAllWinePartners);
+  } catch (error) {
+    console.error("Error fetching wine partners:", error);
+    return [];
+  }
 }
 
 export async function getAllFestivalPartners() {
-  return await client.fetch(queries.getAllFestivalPartners);
+  try {
+    return await client.fetch(queries.getAllFestivalPartners);
+  } catch (error) {
+    console.error("Error fetching festival partners:", error);
+    return [];
+  }
 }

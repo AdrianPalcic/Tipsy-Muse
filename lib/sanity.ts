@@ -19,7 +19,7 @@ function getClient() {
           "Missing NEXT_PUBLIC_SANITY_PROJECT_ID environment variable. Please add it to your Vercel environment variables."
         );
       },
-    } as ReturnType<typeof createClient>;
+    } as unknown as ReturnType<typeof createClient>;
   }
 
   clientInstance = createClient({

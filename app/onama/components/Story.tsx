@@ -28,7 +28,7 @@ const Story = () => {
           <div className=" h-[300px] sm:h-[400px] lg:h-[500px]">
             <img
               src="/panel.png"
-              alt="Dvije dame na wine & art zabavi"
+              alt="Sudionice na wine & paint radionici u Tipsy Muse studiju - kreativno slikanje uz vino u Zagrebu"
               className="w-full h-full object-cover rounded-lg mix-blend-lighten"
               loading="lazy"
             />

@@ -94,7 +94,7 @@ const GalerijaPage = () => {
                   >
                     <img
                       src={image}
-                      alt={`Gallery ${index + 1}`}
+                      alt={`Fotografija iz wine & paint radionice u Tipsy Muse studiju - kreativno slikanje uz vino u Zagrebu ${index + 1}`}
                       loading="lazy"
                       className={`
                        w-full h-full object-cover
@@ -168,7 +168,7 @@ const GalerijaPage = () => {
             </button>
             <img
               src={fullscreenImage}
-              alt="Fullscreen view"
+              alt="Fotografija iz wine & paint radionice u Tipsy Muse studiju - kreativno slikanje uz vino"
               className="max-w-full max-h-full object-contain border-4 border-secondary rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />

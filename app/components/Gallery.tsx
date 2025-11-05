@@ -28,7 +28,7 @@ const Gallery = () => {
                   >
                     <img
                       src={img}
-                      alt={`Gallery ${index + 1}`}
+                      alt={`Fotografija iz wine & paint radionice u Tipsy Muse studiju - kreativno slikanje uz vino u Zagrebu ${index + 1}`}
                       className="w-full h-full object-cover rounded-lg shadow-pink"
                       loading="lazy"
                     />

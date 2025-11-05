@@ -30,7 +30,7 @@ const Hero = () => {
         <div className="w-full lg:flex-1 h-[300px] sm:h-[400px] lg:h-[600px]">
           <img
             src="/screenshot_0006s.jpg"
-            alt="Wine & art zabava"
+            alt="Tipsy Muse wine & paint studio u Zagrebu - slikanje uz čašu vina i kreativno druženje"
             className="w-full h-full object-cover shadow-pink"
           />
         </div>

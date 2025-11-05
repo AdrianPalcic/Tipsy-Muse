@@ -58,7 +58,7 @@ const Hero = () => {
         <div className="w-full lg:flex-1 h-[300px] sm:h-[400px] lg:h-[600px] relative overflow-hidden">
           <img
             src={heroImages[currentImageIndex]}
-            alt="Wine & art zabava"
+            alt="Wine & Paint radionica u Tipsy Muse studiju - slikanje uz čašu vina u Zagrebu"
             className={`w-full h-full object-cover transition-opacity duration-1000 ${
               isTransitioning ? "opacity-0" : "opacity-100"
             }`}

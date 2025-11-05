@@ -4,8 +4,31 @@ import {
   getAllFestivalPartners,
   getAllWinePartners,
 } from "@/lib/sanity.queries";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Partneri",
+  description:
+    "Upoznajte naše partnere - vinske kuće i festivalske organizatore koji sudjeluju u Tipsy Muse radionicama. Spoznajte vrhunska vina i kulturnu scenu Zagreba kroz naše partnerstvo.",
+  keywords: [
+    "partneri tipsy muse",
+    "vinske kuće zagreb",
+    "festivalski partneri",
+    "wine partners zagreb",
+    "kulturna suradnja zagreb",
+  ],
+  openGraph: {
+    title: "Partneri | Tipsy Muse",
+    description:
+      "Upoznajte naše partnere - vinske kuće i festivalske organizatore u Zagrebu.",
+    url: "https://tipsymuse.hr/partneri",
+  },
+  alternates: {
+    canonical: "https://tipsymuse.hr/partneri",
+  },
+};
 
 const page = async () => {
   let vinarije: Partner[] = [];

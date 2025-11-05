@@ -5,8 +5,41 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: "Tipsy Muse | Wine & Paint",
-  description: "Wine & Paint",
+  metadataBase: new URL("https://tipsymuse.hr"),
+  title: {
+    default: "Tipsy Muse | Wine & Paint Studio Zagreb",
+    template: "%s | Tipsy Muse",
+  },
+  description:
+    "Tipsy Muse je wine & paint studio u Zagrebu gdje spajamo umjetnost, vino i zabavu. Rezervirajte radionice slikanja uz čašu vina, koktele ili prosecca. Savršeno za druženje, team building i kreativno izražavanje u opuštenoj atmosferi.",
+  keywords: [
+    "wine and paint",
+    "wine & paint",
+    "wine and paint studio",
+    "wine paint studio zagreb",
+    "wine paint zagreb",
+    "slikanje uz vino zagreb",
+    "radionice slikanja zagreb",
+    "wine art zagreb",
+    "paint and sip zagreb",
+    "kreativne radionice zagreb",
+    "wine & paint radionice",
+    "team building zagreb",
+    "druženje uz slikanje",
+    "wine tasting zagreb",
+    "umjetničke radionice zagreb",
+    "tipsy muse",
+    "tipsy muse zagreb",
+    "maksimirska zagreb",
+  ],
+  authors: [{ name: "Tipsy Muse" }],
+  creator: "Tipsy Muse",
+  publisher: "Tipsy Muse",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -37,6 +70,49 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: "Tipsy Muse",
+  },
+  openGraph: {
+    type: "website",
+    locale: "hr_HR",
+    url: "https://tipsymuse.hr",
+    siteName: "Tipsy Muse",
+    title: "Tipsy Muse | Wine & Paint Studio Zagreb",
+    description:
+      "Wine & paint studio u Zagrebu gdje spajamo umjetnost, vino i zabavu. Rezervirajte radionice slikanja uz čašu vina u opuštenoj atmosferi.",
+    images: [
+      {
+        url: "/Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Tipsy Muse Wine & Paint Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tipsy Muse | Wine & Paint Studio Zagreb",
+    description:
+      "Wine & paint studio u Zagrebu gdje spajamo umjetnost, vino i zabavu.",
+    images: ["/Logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add your verification codes here when available
+    // google: "your-google-verification-code",
+    // yandex: "your-yandex-verification-code",
+  },
+  alternates: {
+    canonical: "https://tipsymuse.hr",
   },
 };
 
@@ -90,7 +166,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${luckiestGuy.variable} ${baloo.variable}`}>
+    <html lang="hr" className={`${luckiestGuy.variable} ${baloo.variable}`}>
       <body suppressHydrationWarning className={`antialiased`}>
         <Navbar />
         {children}

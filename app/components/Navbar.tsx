@@ -10,7 +10,6 @@ const Navbar = () => {
   return (
     <header className="bg-tetriary-dark px-2 sm:px-6 py-2 fixed top-0 w-full z-50 border-b-2 border-primary border-solid ">
       <nav className="flex justify-between items-center font-luckiest-guy text-primary">
-        {/* Logo */}
         <Link
           href={"/"}
           id="logo"
@@ -23,7 +22,6 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 text-[18px] items-center">
           {links.map((link, index) => {
             const isLast = index === links.length - 1;
@@ -41,7 +39,6 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* Mobile Menu Icon */}
         <div className="md:hidden z-50">
           {isOpen ? (
             <X

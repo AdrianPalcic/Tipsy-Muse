@@ -1,17 +1,15 @@
 export const formattedDate = (date: Date) => {
-  const day = date.getDate().toString().padStart(2, "0"); // dodaje 0 ako je <10
-  const month = (date.getMonth() + 1).toString().padStart(2, "0"); // mjeseci su 0-indexed
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
   const year = date.getFullYear();
   return `${day}.${month}.${year}`;
 };
 
-// Parse date string from "DD.MM.YYYY" format to Date object
 export const parseDate = (dateString: string): Date => {
   const [day, month, year] = dateString.split(".").map(Number);
   return new Date(year, month - 1, day);
 };
 
-// Get date range start and end based on filter option
 export const getDateRange = (
   filter: string
 ): { start: Date; end: Date } | null => {
@@ -22,7 +20,7 @@ export const getDateRange = (
     case "ovaj tjedan": {
       const start = new Date(today);
       const dayOfWeek = today.getDay();
-      const diff = dayOfWeek === 0 ? -6 : 1 - dayOfWeek; // Monday is start of week
+      const diff = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
       start.setDate(today.getDate() + diff);
 
       const end = new Date(start);
@@ -33,7 +31,7 @@ export const getDateRange = (
     case "sljedeci tjedan": {
       const start = new Date(today);
       const dayOfWeek = today.getDay();
-      const diff = dayOfWeek === 0 ? 1 : 8 - dayOfWeek; // Next Monday
+      const diff = dayOfWeek === 0 ? 1 : 8 - dayOfWeek;
       start.setDate(today.getDate() + diff);
 
       const end = new Date(start);
@@ -59,12 +57,11 @@ export const getDateRange = (
   }
 };
 
-// Check if a date falls within a range
 export const isDateInRange = (
   dateString: string,
   range: { start: Date; end: Date } | null
 ): boolean => {
-  if (!range) return true; // No filter means all dates pass
+  if (!range) return true;
 
   const date = parseDate(dateString);
   return date >= range.start && date <= range.end;

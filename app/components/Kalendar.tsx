@@ -1,7 +1,7 @@
 "use client";
 
-import React, { ReactEventHandler, useEffect, useState } from "react";
-import { months, radionice } from "../constants";
+import { useEffect, useState } from "react";
+import { months } from "../constants";
 import { formattedDate } from "../utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -44,7 +44,7 @@ const Kalendar = () => {
     const monthDays = getDaysInMonth(displayedYear, displayedMonth);
     setDays(monthDays);
 
-    const radionicesDates = radionice.map((radionica) => radionica.datum);
+    const radionicesDates = workshops.map((radionica) => radionica.datum);
     setActiveDays(radionicesDates);
   }, [displayedYear, displayedMonth]);
 

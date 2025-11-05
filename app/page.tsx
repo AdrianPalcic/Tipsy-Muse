@@ -1,11 +1,9 @@
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import KategorijeRadionica from "./components/KategorijeRadionica";
 import Kalendar from "./components/Kalendar";
 import HowWeWork from "./components/HowWeWork";
 import Gallery from "./components/Gallery";
 import CTA from "./components/CTA";
-import Footer from "./components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

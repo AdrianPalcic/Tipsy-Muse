@@ -1,6 +1,3 @@
-import { MapPin } from "lucide-react";
-import Link from "next/link";
-import { info } from "../constants";
 import Form from "./compontens/Form";
 import CTA from "../components/CTA";
 import type { Metadata } from "next";

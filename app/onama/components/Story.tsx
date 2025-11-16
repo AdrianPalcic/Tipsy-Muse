@@ -8,13 +8,25 @@ const Story = () => {
         <div className="flex-1 w-full text-center lg:text-left">
           <h1 className="title text-gradient shadow-pink-text">Naša priča</h1>
           <p className="subtitle mx-auto lg:mx-0">
-            Sve je počelo uz čašu vina i ideju — što kada bi slikanje bilo više
-            zabava, a manje ozbiljan zadatak? Htjeli smo stvoriti prostor u
-            kojem svatko može pustiti mašti na volju, smijati se, proliti koju
-            kap boje (ili vina) i jednostavno uživati u trenutku. Tako je nastao
-            Tipsy Muse — spoj umjetnosti, druženja i dobrih vibracija. Kod nas
-            ne moraš biti umjetnik da bi stvarao; dovoljno je da dođeš otvorenog
-            uma i prazne čaše.
+            Što je Tipsy Muse? Sve je počelo s idejom koja nam je sjedila u
+            glavi duže nego je pristojno priznati - što ako se želimo zabaviti
+            bez prevrtanja jedno te istih priča iz kafića ali nam se neda ići u
+            prezaglušen klub? Što ( i gdje ) raditi nešto PO PRVI PUT bez obveza
+            i pritiska? Krenulo je sa slikanjem jer smo htjeli da nam radionice
+            budu manje stres a više - izlazak? Bez neugodne tišine, moranja,
+            ukočenosti i pritiska da svi budemo "jednako savršeni". Nismo htjeli
+            ni imati samo vino, htjeli smo imati NAJBOLJA vina. I spojiti
+            fenomenalne butelje, kompletne strance, neiskusne individualce sa
+            dobrom vibrom i osjećajem pripadnosti. Htjeli smo stvoriti prostor u
+            kojem se ljudi osjećaju "kao kod kuće" a ne u nekoj galeriji, htjeli
+            smo da se opuštate, družite i stvarate i da kompletno zaboravite na
+            rutinu i obaveze "vanjskog svijeta" na barem 2 sata. Tipsy Muse je
+            nastao iz jednostavne želje da se prestanemo shvaćati tako ozbiljno.
+            Da se više smijemo manje stresiramo, da pokušamo nešto po prvi put i
+            pritom se odlično zabavimo. Da odemo kući malo više Tipsy i malo
+            manje opterećeni. Kod nas nema prazne čaše, nema loše slike -
+            šminke, nema pritiska - ima puno razumjevanja, vina i dobre
+            energije.
           </p>
           <div className="w-fit mx-auto sm:mx-0">
             <Link href="/radionice" className="w-fit">

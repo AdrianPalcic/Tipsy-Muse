@@ -15,13 +15,13 @@ const KategorijeRadionica = () => {
               Tipsy Radionice
             </h1>
             <p className="subtitle mx-auto lg:mx-0">
-              Malo vina, puno ideja. Tipsy Muse spaja kreativnost, razgovor i
-              umjetnost — jer najbolje misli ne dolaze za stolom, nego između
-              gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj
-              svoje mjesto za dozu umjetnosti uz čašu vina.
+              Vino nam je osnova, konstanta i uvijek izvrsna kvaliteta. A da
+              bismo ti pružili najbolje iskustvo opuštanja i stvaralaštva - za
+              tebe smo pripremili asortiman kreativnih opcija da otkriješ svoj
+              talent ili se dooooobro nasmiješ pokušaju
             </p>
-            <div className="w-fit mx-auto sm:mx-0">
-              <Link href="/radionice" className="w-fit">
+            <div className=" mx-auto sm:mx-0 flex justify-center align-center w-full">
+              <Link href="/radionice" className="w-fit ">
                 <button className="button blue w-full sm:w-auto">
                   Pogledaj radionice
                 </button>

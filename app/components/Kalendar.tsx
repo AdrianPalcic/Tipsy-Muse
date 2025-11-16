@@ -86,10 +86,9 @@ const Kalendar = () => {
           <div className="flex-1 w-full text-center lg:text-left">
             <h1 className="title text-gradient shadow-pink-text">Kalendar</h1>
             <p className="subtitle mx-auto lg:mx-0">
-              Malo vina, puno ideja. Tipsy Muse spaja kreativnost, razgovor i
-              umjetnost — jer najbolje misli ne dolaze za stolom, nego između
-              gutljaja. Otkrij radionice koje bude inspiraciju i rezerviraj
-              svoje mjesto za dozu umjetnosti uz čašu vina.
+              Već znaš koji dan ti treba zabava i kretivni output? Klikni na
+              odabrani datum i vidi koju radionicu i koje vinske partnere smo ti
+              pripremili za taj dan!
             </p>
             <div className="calendar w-full">
               <div className="p-3 sm:p-4 lg:p-6 border-3 border-solid border-primary w-full rounded-md bg-tetriary-dark shadow-pink">

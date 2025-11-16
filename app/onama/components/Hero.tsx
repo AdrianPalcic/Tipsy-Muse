@@ -9,12 +9,14 @@ const Hero = () => {
       <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 max-w-7xl mx-auto">
         <div className="flex-1 w-full text-center lg:text-left">
           <h1 className="title text-gradient shadow-pink-text">
-            Kad se vino <br /> spoji s maštom
+            DOBRO VINO I VAŠA ENERGIJA
           </h1>
           <p className="subtitle mx-auto lg:mx-0">
-            Stvorili smo Tipsy Muse kako bismo spojili umjetnost, druženje i
-            dobru energiju. Kod nas se ne ocjenjuje — nego slavi svaki potez
-            kistom i svaki osmijeh uz gutljaj vina.
+            Stvorili smo Tipsy Muse kako bi vam pružili siguran prostor za
+            istraživanje svoje kreativnosti, koliko god vi mislili da ju nemate.
+            Nismo tu da nekoga ocjenjujemo ili obrazujemo, samo ti pružamo alate
+            i istomišljenike da se makneš od svakodnevice i napokon uložiš nešto
+            i u sebe.
           </p>
           <div className="flex flex-row items-center justify-center lg:justify-start gap-4">
             <Link href="/radionice" className="w-fit">

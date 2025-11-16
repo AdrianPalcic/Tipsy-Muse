@@ -5,11 +5,16 @@ const OurPartners = () => {
     <section className="section-overlay-a section-padding">
       <h1 className="title shadow-pink-text text-center">Naši Partneri</h1>
       <p className="subtitle text-center max-w-5xl mx-auto">
-        Ponosno surađujemo s vrhunskim vinskim kućama i festivalima koji dijele
-        našu strast za umjetnošću, kreativnošću i dobrim druženjem. Naši
-        partneri pomažu nam da svaka radionica bude jedinstveno iskustvo, od
-        odabira kvalitetnog vina do stvaranja atmosfere koja potiče inspiraciju
-        i zabavu.
+        Tipsy Muse je JEDINI kreativni studio koji stavlja vino u centar naše
+        priče. Vjerujemo da je vrhunsko vino namjenjeno SVIMA - uživanju bez
+        obveze i pritiska klasičnih degustacija, neovisno o tome da li ste
+        vinski znalac ili potpuni amater. Zato ponosno surađujemo s vrhunskim
+        lokalnim vinskim kućama i destivalima koji dijele našu viziju u spajanju
+        izuzenih etiketa sa umjetnošću. Naši partneri nam pomažu da svaka
+        radionica bude jedinstveno iskustvo, od profesionalne vinske
+        prezentacije koju dovodimo direktno iz vinskih kuća do našeg studia, kao
+        i neograničene degustacije probranih etiketa u opuštenoj i inspirativnoj
+        atmosferi.
       </p>
       <div className="mx-auto w-fit mb-8">
         <Link href="/partneri">

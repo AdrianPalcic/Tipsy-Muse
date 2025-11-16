@@ -46,10 +46,22 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
                   </div>
                 </div>
                 <div className="flex justify-between mt-4 items-center">
-                  <h3 className="text-5xl">€{cijena}</h3>
-                  <Link href={`/radionice/${slug.current}`} className="w-fit">
-                    <button className="button yellow">Prijavi se</button>
-                  </Link>
+                  {freeSpace > 1 ? (
+                    <>
+                      <h3 className="text-5xl">€{cijena}</h3>
+                      <Link
+                        href={`/radionice/${slug.current}`}
+                        className="w-fit"
+                      >
+                        <button className="button yellow">Prijavi se</button>
+                      </Link>
+                    </>
+                  ) : (
+                    <div className="bg-red-900/60 border-3 border-red-600 w-fit py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">
+                      {" "}
+                      Nažalost ova radionica je bookirana
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

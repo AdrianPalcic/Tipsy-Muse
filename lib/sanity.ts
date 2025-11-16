@@ -27,6 +27,7 @@ function getClient() {
     dataset,
     apiVersion: "2023-05-03",
     useCdn: true,
+    token: process.env.SANITY_WRITE_TOKEN,
   });
 
   return clientInstance;

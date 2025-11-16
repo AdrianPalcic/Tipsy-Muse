@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { screenshots } from "@/app/constants";
+import BuyButton from "../../components/BuyButton";
 
 const Body = ({ radionica }: { radionica: Radionice }) => {
   const [istekla, setIstekla] = useState<boolean>(false);
@@ -196,11 +197,14 @@ const Body = ({ radionica }: { radionica: Radionice }) => {
                       <span className="text-white/70 mb-4">Cijena</span>
                       <h2 className="text-6xl">€{radionica.cijena}</h2>
                       <span className="text-white/70 my-4">Po osobi</span>
-                      <Link href="/" className="w-full">
-                        <button className="button red w-full">
-                          Prijavi se sada
-                        </button>
-                      </Link>
+                      <BuyButton
+                        price={radionica.cijena}
+                        name={radionica.naslov}
+                        description={radionica.opis}
+                        location={radionica.lokacija}
+                        imageUrl={radionica.image.asset.url}
+                        id={radionica._id}
+                      />
                       <div className="bg-red-900/60 border-3 border-red-600 w-full py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">
                         {" "}
                         Samo još {freeSpace} mjesta

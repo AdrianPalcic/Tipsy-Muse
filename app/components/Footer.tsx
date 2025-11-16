@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { links } from "../constants";
 
 const Footer = () => {

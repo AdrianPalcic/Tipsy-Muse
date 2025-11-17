@@ -1,16 +1,35 @@
 "use client";
 
 import { info } from "@/app/constants";
+import { sendEmail } from "@/lib/sendEmail";
 import { Send } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Form = () => {
+  const [ime, setIme] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefon, setTelefon] = useState("");
+  const [poruka, setPoruka] = useState("");
+  const [status, setStatus] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+
+    const res = await sendEmail({ ime, email, telefon, poruka });
+
+    if (res.ok) {
+      setStatus("Poruka Poslana!");
+    } else {
+      setStatus("Došlo je do greške");
+    }
+  }
+
   return (
     <div className="flex gap-6 lg:flex-row flex-col ">
       <div className=" bg-tetriary px-5 py-5 lg:px-12 lg:py-10 shadow-yellow border-3 border-secondary border-solid flex-1">
         <h3 className="heading-three mb-4">Pošaljite Poruku</h3>
-        <form action="POST">
+        <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-5 mt-10">
             <div className="flex flex-col">
               <label
@@ -25,6 +44,9 @@ const Form = () => {
                 name="name"
                 placeholder="Vaše Ime i Prezime"
                 className="border-2 border-secondary border-solid py-3 px-3 font-baloo font-semibold mt-2 bg-tetriary-dark text-[#5800B2] text-[16px]"
+                value={ime}
+                required
+                onChange={(e) => setIme(e.target.value)}
               />
             </div>
             <div className="flex flex-col">
@@ -39,7 +61,10 @@ const Form = () => {
                 id="email"
                 name="email"
                 placeholder="email@example.com"
+                value={email}
+                required
                 className="border-2 border-secondary border-solid py-3 px-3 font-baloo font-semibold mt-2 bg-tetriary-dark text-[#5800B2] text-[16px]"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="flex flex-col">
@@ -54,7 +79,9 @@ const Form = () => {
                 id="telefon"
                 name="telefon"
                 placeholder="+385 XX XXX XXXX"
+                value={telefon}
                 className="border-2 border-secondary border-solid py-3 px-3 font-baloo font-semibold mt-2 bg-tetriary-dark text-[#5800B2] text-[16px]"
+                onChange={(e) => setTelefon(e.target.value)}
               />
             </div>
             <div className="flex flex-col">
@@ -67,13 +94,23 @@ const Form = () => {
               <textarea
                 id="poruka"
                 placeholder="Vaša Poruka"
+                value={poruka}
+                required
                 className="border-2 border-secondary border-solid py-3 px-3 font-baloo font-semibold mt-2 bg-tetriary-dark text-[#5800B2] text-[16px] h-[200px]"
+                onChange={(e) => setPoruka(e.target.value)}
               ></textarea>
             </div>
-            <button className="button yellow flex items-center gap-4">
-              <Send />
-              <span>Pošaljite poruku</span>
-            </button>
+            {!status ? (
+              <button
+                type="submit"
+                className="button yellow flex items-center gap-4"
+              >
+                <Send />
+                <span>Pošaljite poruku</span>
+              </button>
+            ) : (
+              <p className="subtitle w-full flex justify-center">{status}</p>
+            )}
           </div>
         </form>
       </div>

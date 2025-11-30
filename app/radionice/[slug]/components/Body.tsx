@@ -211,7 +211,7 @@ const Body = ({ radionica }: { radionica: Radionice }) => {
                       <span className="text-white/70 mb-4">Cijena</span>
                       <h2 className="text-6xl">€{radionica.cijena}</h2>
                       <span className="text-white/70 my-4">Po osobi</span>
-                      {freeSpace > 1 ? (
+                      {freeSpace >= 1 ? (
                         <BuyButton
                           price={radionica.cijena}
                           name={radionica.naslov}
@@ -227,7 +227,7 @@ const Body = ({ radionica }: { radionica: Radionice }) => {
                           Nažalost ova radionica je bookirana
                         </div>
                       )}
-                      {freeSpace > 1 && (
+                      {freeSpace >= 1 && (
                         <>
                           <div className="bg-red-900/60 border-3 border-red-600 w-full py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">
                             {" "}

@@ -46,7 +46,7 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
                   </div>
                 </div>
                 <div className="flex justify-between mt-4 items-center">
-                  {freeSpace > 1 ? (
+                  {freeSpace >= 1 ? (
                     <>
                       <h3 className="text-5xl">€{cijena}</h3>
                       <Link

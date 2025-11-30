@@ -1,5 +1,9 @@
 "use client";
 
+// Vise ulaznica od jednom -
+// Potvrda o placanju jesu ulaznice
+// Mikro racun
+
 import { useEffect, useState, useRef } from "react";
 import Hero from "./Hero";
 import {
@@ -9,6 +13,7 @@ import {
   User,
   ChevronLeft,
   ChevronRight,
+  TicketMinusIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { screenshots } from "@/app/constants";
@@ -17,6 +22,7 @@ import BuyButton from "../../components/BuyButton";
 const Body = ({ radionica }: { radionica: Radionice }) => {
   const [istekla, setIstekla] = useState<boolean>(false);
   const [exists, setExists] = useState<boolean>(true);
+  const [tickets, setTickets] = useState<number>(1);
   const carouselImages = screenshots;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -91,6 +97,15 @@ const Body = ({ radionica }: { radionica: Radionice }) => {
         behavior: "smooth",
       });
     }
+  };
+
+  const handleIncrement = () => {
+    if (tickets === freeSpace) return;
+    setTickets((prev) => prev + 1);
+  };
+  const handleDecrement = () => {
+    if (tickets === 1) return;
+    setTickets((prev) => prev - 1);
   };
 
   return (
@@ -217,6 +232,29 @@ const Body = ({ radionica }: { radionica: Radionice }) => {
                           <div className="bg-red-900/60 border-3 border-red-600 w-full py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">
                             {" "}
                             Samo još {freeSpace} mjesta
+                          </div>
+
+                          <div className="w-full">
+                            <h3 className="mb-4 text-secondary text-xl">
+                              Broj ulaznica
+                            </h3>
+                            <div className="flex w-full justify-between items-center mb-3">
+                              <span
+                                onClick={handleIncrement}
+                                className="text-primary text-5xl cursor-pointer"
+                              >
+                                +
+                              </span>
+                              <p className="font-luckiest-guy text-white text-2xl">
+                                {tickets}
+                              </p>
+                              <span
+                                onClick={handleDecrement}
+                                className="text-primary   text-5xl cursor-pointer"
+                              >
+                                -
+                              </span>
+                            </div>
                           </div>
 
                           <div className="border-t-2 border-b-2 border-secondary/70 py-4 w-full mb-4">

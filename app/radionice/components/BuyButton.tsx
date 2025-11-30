@@ -38,7 +38,7 @@ export default function BuyButton({
 
   return (
     <button onClick={handleCheckout} className="button red w-full">
-      Prijavi se sada
+      Kupi ulaznice
     </button>
   );
 }

@@ -31,7 +31,10 @@ export async function POST(req: Request) {
     const tickets = Number(session.metadata?.tickets || 1);
     if (!Number.isInteger(tickets) || tickets <= 0) {
       console.error(`Invalid tickets value: ${session.metadata?.tickets}`);
-      return NextResponse.json({ received: true });
+      return NextResponse.json(
+        { error: "Invalid tickets value" },
+        { status: 400 }
+      );
     }
     // povećaj broj rezervacija za broj tiketa
     await (client as ReturnType<typeof createClient>)

@@ -139,7 +139,8 @@ const Body = ({ radionica }: { radionica: Radionice }) => {
                         Dostupnost
                       </h4>
                       <p className="text-white text-[16px]">
-                        {freeSpace} mjesta preostalo
+                        {freeSpace} {freeSpace === 1 ? "mjesto" : "mjesta"}{" "}
+                        preostalo
                       </p>
                     </div>
                   </div>
@@ -231,7 +232,8 @@ const Body = ({ radionica }: { radionica: Radionice }) => {
                         <>
                           <div className="bg-red-900/60 border-3 border-red-600 w-full py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">
                             {" "}
-                            Samo još {freeSpace} mjesta
+                            Samo još {freeSpace}{" "}
+                            {freeSpace === 1 ? "mjesto" : "mjesta"}
                           </div>
 
                           <div className="w-full">

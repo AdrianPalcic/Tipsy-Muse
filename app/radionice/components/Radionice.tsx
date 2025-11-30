@@ -42,7 +42,11 @@ const Radionice = ({ radionice }: { radionice: Radionice[] }) => {
                     <Clock /> <span>{vrijeme}h</span>
                   </div>
                   <div className="flex gap-4 items-center font-bold text-secondary">
-                    <User /> <span>{freeSpace} mjesta preostalo</span>
+                    <User />{" "}
+                    <span>
+                      {freeSpace} {freeSpace == 1 ? "mjesto" : "mjesta"}{" "}
+                      preostalo
+                    </span>
                   </div>
                 </div>
                 <div className="flex justify-between mt-4 items-center">

@@ -10,6 +10,43 @@ export async function POST(req: Request) {
     const { name, price, description, location, image, id, tickets } =
       await req.json();
 
+    // Validate tickets
+    if (
+      !tickets ||
+      typeof tickets !== "number" ||
+      tickets < 1 ||
+      !Number.isInteger(tickets)
+    ) {
+      return NextResponse.json(
+        { error: "Invalid tickets value. Must be a positive integer." },
+        { status: 400 }
+      );
+    }
+    // Validate tickets
+    if (
+      !tickets ||
+      typeof tickets !== "number" ||
+      tickets < 1 ||
+      !Number.isInteger(tickets)
+    ) {
+      return NextResponse.json(
+        { error: "Invalid tickets value. Must be a positive integer." },
+        { status: 400 }
+      );
+    }
+    //Validate tickets
+    if (
+      !tickets ||
+      typeof tickets !== "number" ||
+      tickets < 1 ||
+      !Number.isInteger(tickets)
+    ) {
+      return NextResponse.json(
+        { error: "Invalid tickets value. Must be a positive integer." },
+        { status: 400 }
+      );
+    }
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       payment_method_types: ["card"],

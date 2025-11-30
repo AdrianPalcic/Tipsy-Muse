@@ -13,7 +13,6 @@ import {
   User,
   ChevronLeft,
   ChevronRight,
-  TicketMinusIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { screenshots } from "@/app/constants";
@@ -220,6 +219,7 @@ const Body = ({ radionica }: { radionica: Radionice }) => {
                           location={radionica.lokacija}
                           imageUrl={radionica.image.asset.url}
                           id={radionica._id}
+                          tickets={tickets}
                         />
                       ) : (
                         <div className="bg-red-900/60 border-3 border-red-600 w-full py-3 px-6 my-4 flex items-center justify-center font-luckiest-guy text-red-600 text-[16px]">

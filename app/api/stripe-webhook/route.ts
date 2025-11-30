@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import { NextResponse } from "next/server";
 import { client } from "@/lib/sanity";
 import { createClient } from "@sanity/client";
+import { Session } from "inspector/promises";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2025-10-29.clover",
@@ -28,11 +29,12 @@ export async function POST(req: Request) {
 
     const workshopId = session.metadata?.workshopId;
     if (!workshopId) return NextResponse.json({ ok: true });
+    const tickets = Number(session.metadata?.tickets || 1);
 
     // povećaj broj rezervacija za 1
     await (client as ReturnType<typeof createClient>)
       .patch(workshopId)
-      .inc({ rezervirano: 1 })
+      .inc({ rezervirano: tickets })
       .commit();
 
     console.log(`Rezervirano povećano za workshop: ${workshopId}`);

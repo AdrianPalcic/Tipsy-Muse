@@ -7,6 +7,7 @@ export default function BuyButton({
   location, // dodano
   imageUrl,
   id,
+  tickets,
 }: {
   price: number;
   name: string;
@@ -14,6 +15,7 @@ export default function BuyButton({
   location: string;
   imageUrl: string;
   id: string;
+  tickets: number;
 }) {
   const handleCheckout = async () => {
     const res = await fetch("/api/checkout", {
@@ -26,6 +28,7 @@ export default function BuyButton({
         location,
         image: imageUrl,
         id,
+        tickets,
       }),
     });
 

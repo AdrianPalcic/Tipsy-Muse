@@ -18,7 +18,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: radionica.naslov || "Radionica",
+    title: `Tipsy Muse - ${radionica.naslov ? radionica.naslov : "Radionica"}`,
     description:
       radionica.opis ||
       `Rezervirajte radionicu ${radionica.naslov} u Tipsy Muse studiju. ${radionica.kategorija} radionica u Zagrebu.`,

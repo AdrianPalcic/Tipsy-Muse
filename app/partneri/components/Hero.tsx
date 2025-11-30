@@ -27,10 +27,17 @@ const Hero = () => {
           <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-lg max-w-2xl mb-6 sm:mb-8">
             Suradnja s vrhunskim vinskim kućama i festivalima omogućuje nam da
             svaka radionica bude jedinstveno iskustvo, kreativna i inspirativna.
+            U Tipsy Muse vino je uvijek u centru priče. Naše radionice jedine u
+            Hrvatskoj nude probrane etikete poznatih vinskih kuća, najširi izbor
+            sorti, te prezentacije samih vinara. Gosti kušaju i više od pet
+            vrsta vina po radionici, uključujući i vrhunske butelje koje se
+            rijetko nalaze zajedno.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4">
             <Link href="#vinarije" className="w-fit">
-              <button className="button blue w-full sm:w-auto">Vinarije</button>
+              <button className="button blue w-full sm:w-auto ">
+                Vinarije
+              </button>
             </Link>
             <Link href="#festivali" className="w-fit">
               <button className="button red w-full sm:w-auto">Festivali</button>
